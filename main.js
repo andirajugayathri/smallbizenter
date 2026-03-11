@@ -90,13 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Process Timeline Interaction (Additive / Persistent)
-    const timelineSection = document.querySelector('.process-section');
-    if (timelineSection) {
-        const progressLine = timelineSection.querySelector('.timeline-progress');
-        const steps = timelineSection.querySelectorAll('.process-step');
+    // Support both original and v3 classes
+    const setupTimeline = (sectionSelector, stepSelector, progressSelector) => {
+        const section = document.querySelector(sectionSelector);
+        if (!section) return;
+
+        const progressLine = section.querySelector(progressSelector);
+        const steps = section.querySelectorAll(stepSelector);
 
         const updateTimeline = (targetIndex) => {
-            const isMobile = window.innerWidth <= 968;
+            const isMobile = window.innerWidth <= 991; // Updated to 991 to match style2.css
             const progressValue = (targetIndex / (steps.length - 1)) * 100;
 
             if (progressLine) {
@@ -109,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Additive Active Classes: All steps up to targetIndex are active
             steps.forEach((step, i) => {
                 if (i <= targetIndex) {
                     step.classList.add('active');
@@ -119,21 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Interaction handlers (Click & Hover)
         steps.forEach((step, index) => {
-            step.addEventListener('click', () => {
-                updateTimeline(index);
-            });
-
-            step.addEventListener('mouseenter', () => {
-                updateTimeline(index);
-            });
+            step.addEventListener('click', () => updateTimeline(index));
+            step.addEventListener('mouseenter', () => updateTimeline(index));
         });
 
-        // Initialize first step as active
         updateTimeline(0);
 
-        // Handle window resize for mobile/desktop toggle
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -143,7 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateTimeline(actualIndex);
             }, 100);
         });
-    }
+    };
+
+    // Initialize both if they exist
+    setupTimeline('.process-section', '.process-step', '.timeline-progress');
+    setupTimeline('.process-section-v3', '.process-step-v3', '.timeline-progress-v3');
 
     // Mobile Menu Toggle
     const navToggle = document.querySelector('.nav-toggle');
