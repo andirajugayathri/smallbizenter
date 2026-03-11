@@ -14,7 +14,9 @@
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Small Biz <span>Enter</span></a>
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/website%20logo.png" alt="Small Biz Enter" class="nav-logo">
+            </a>
 
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -82,7 +84,24 @@
                         <div class="visual-wrapper">
                             <!-- Main Laptop Mockup -->
                             <div class="mockup-container">
-                                <img src="grow-img-main.png" alt="Small Biz Dashboard" class="main-laptop">
+                                <img src="images/smallbizenter.png" alt="Small Biz Enter Professional"
+                                    class="main-laptop">
+
+                                <!-- Floating Service Icons -->
+                                <div class="floating-icons">
+                                    <div class="f-icon icon-seo" title="SEO Optimization">
+                                        <i data-lucide="search"></i>
+                                    </div>
+                                    <div class="f-icon icon-design" title="Web Design">
+                                        <i data-lucide="layout"></i>
+                                    </div>
+                                    <div class="f-icon icon-code" title="Custom Development">
+                                        <i data-lucide="code"></i>
+                                    </div>
+                                    <div class="f-icon icon-growth" title="Business Growth">
+                                        <i data-lucide="trending-up"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,10 +119,10 @@
                     <div class="about-visual">
                         <div class="dual-images">
                             <div class="img-wrap main-wrap">
-                                <img src="about-entrepreneur.png" alt="Entrepreneur Workspace" class="about-img">
+                                <img src="images/about-entrepreneur.png" alt="Entrepreneur Workspace" class="about-img">
                             </div>
                             <div class="img-wrap secondary-wrap">
-                                <img src="about-workspace-2.png" alt="Creative Workspace" class="about-img">
+                                <img src="images/about-workspace-2.png" alt="Creative Workspace" class="about-img">
                             </div>
 
                             <!-- 15+ Years Badge -->
@@ -233,7 +252,7 @@
                                 <p>Deep conversation about your business, goals, and target market to understand success
                                     criteria.</p>
                                 <div class="step-visual">
-                                    <img src="process-discovery.png" alt="Discovery Phase">
+                                    <img src="images/process-discovery.png" alt="Discovery Phase">
                                 </div>
                             </div>
                         </div>
@@ -248,7 +267,7 @@
                                 <p>Create a custom roadmap with channels, tools, and timelines for sustainable growth.
                                 </p>
                                 <div class="step-visual">
-                                    <img src="process-strategy.png" alt="Strategy Phase">
+                                    <img src="images/process-strategy.png" alt="Strategy Phase">
                                 </div>
                             </div>
                         </div>
@@ -262,7 +281,7 @@
                                 <h3>Design & Build</h3>
                                 <p>Transforming ideas into visually stunning, high-performing digital assets.</p>
                                 <div class="step-visual">
-                                    <img src="process-design.png" alt="Design Phase">
+                                    <img src="images/process-design.png" alt="Design Phase">
                                 </div>
                             </div>
                         </div>
@@ -276,7 +295,7 @@
                                 <h3>Launch & Optimize</h3>
                                 <p>Launch, monitor performance, run tests, and continuously optimize results.</p>
                                 <div class="step-visual">
-                                    <img src="process-launch.png" alt="Launch Phase">
+                                    <img src="images/process-launch.png" alt="Launch Phase">
                                 </div>
                             </div>
                         </div>
@@ -287,7 +306,7 @@
         </section>
 
         <!-- OUR CLIENTS -->
-        <section class="clients-section reveal">
+        <section class="clients-section bg-light reveal">
             <div class="container">
                 <div class="section-head">
 
@@ -316,7 +335,7 @@
         </section>
 
         <!-- WHY CHOOSE US -->
-        <section class="why-choose-section bg-dark reveal" style="padding: 100px 0;">
+        <section class="why-choose-section reveal" style="padding: 100px 0;">
             <div class="container">
                 <div class="why-grid">
 
@@ -328,7 +347,7 @@
                             journey.</p>
 
                         <div class="why-visual">
-                            <img src="growth-chart.png" alt="Growth Success" class="floating-img">
+                            <img src="images/growth-chart.png" alt="Growth Success" class="floating-img">
                             <div class="visual-badge">
                                 <i data-lucide="trending-up"></i>
                                 <span>100% Results Driven</span>
@@ -425,6 +444,7 @@
             </div>
         </section>
 
+
         <!-- FAQ -->
         <section class="faq-section reveal">
             <div class="container">
@@ -492,44 +512,65 @@
 
     </main>
 
-    <footer>
+    <footer class="footer-premium">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 60px;">
-                <div>
-                    <div class="footer-logo">Small Biz <span>Enter</span></div>
-                    <p style="font-size: 14px;">Empowering small businesses with the digital tools and expert strategies
-                        they need to grow. Built with purpose.</p>
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col-brand">
+                    <div class="logo-wrapper" style="margin-bottom: 16px;"><img src="images/website%20logo.png"
+                            alt="Small Biz Enter" class="footer-logo-img"></div>
+                    <p class="footer-usp">We empower ambitious small businesses with enterprise-level digital
+                        strategies,
+                        stunning design, and robust development.</p>
                 </div>
-                <div>
-                    <div class="col-head">Services</div>
-                    <ul style="list-style: none; font-size: 14px; line-height: 2.2;">
-                        <li>Digital Marketing</li>
-                        <li>SEO</li>
-                        <li>Brand Identity</li>
-                        <li>Web Development</li>
+
+                <!-- Column 2: Services -->
+                <div class="footer-col-links">
+                    <div class="footer-head">Services</div>
+                    <ul class="footer-links">
+                        <li><a href="services.html#marketing">Digital Marketing</a></li>
+                        <li><a href="services.html#seo">SEO Optimization</a></li>
+                        <li><a href="services.html#branding">Brand Identity</a></li>
+                        <li><a href="services.html#dev">Web Development</a></li>
                     </ul>
                 </div>
-                <div>
-                    <div class="col-head">Quick Links</div>
-                    <ul style="list-style: none; font-size: 14px; line-height: 2.2;">
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Services</li>
-                        <li>Contact Us</li>
+
+                <!-- Column 3: Company -->
+                <div class="footer-col-links">
+                    <div class="footer-head">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Our Work</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div>
-                    <div class="col-head">Connect</div>
-                    <div style="display: flex; gap: 16px; margin-top: 10px;">
-                        <i data-lucide="linkedin" size="20"></i>
-                        <i data-lucide="instagram" size="20"></i>
-                        <i data-lucide="twitter" size="20"></i>
+
+                <!-- Column 4: Newsletter -->
+                <div class="footer-col-newsletter">
+                    <div class="footer-head">Stay Ahead</div>
+                    <p class="newsletter-text">Get weekly insights on growing your business digitally.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-newsletter"><i data-lucide="send"></i></button>
+                    </form>
+                    <div class="social-pills">
+                        <a href="#" class="social-pill"><i data-lucide="linkedin" size="18"></i></a>
+                        <a href="#" class="social-pill"><i data-lucide="instagram" size="18"></i></a>
+                        <a href="#" class="social-pill"><i data-lucide="twitter" size="18"></i></a>
                     </div>
                 </div>
             </div>
-            <div
-                style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 13px;">
-                © 2026 SmallBizEnter. All Rights Reserved.
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-flex">
+                    <div class="copyright">© 2026 Small Biz Enter. All Rights Reserved.</div>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

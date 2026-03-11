@@ -60,17 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
             faqItems.forEach(i => {
                 i.classList.remove('active');
                 const content = i.querySelector('.faq-content');
-                const icon = i.querySelector('i');
                 if (content) content.style.display = 'none';
-                if (icon) icon.setAttribute('data-lucide', 'plus');
+
+                // Swap icon back to plus
+                const iconNode = i.querySelector('svg.lucide');
+                if (iconNode) {
+                    const newI = document.createElement('i');
+                    newI.className = iconNode.getAttribute('class').replace(/lucide-\S+/g, '').replace('lucide', '').trim();
+                    newI.setAttribute('data-lucide', 'plus');
+                    iconNode.parentNode.replaceChild(newI, iconNode);
+                }
             });
 
             if (!isActive) {
                 item.classList.add('active');
                 const content = item.querySelector('.faq-content');
-                const icon = item.querySelector('i');
                 if (content) content.style.display = 'block';
-                if (icon) icon.setAttribute('data-lucide', 'minus');
+
+                // Swap icon to minus
+                const iconNode = item.querySelector('i'); // Because we just replaced it above
+                if (iconNode) {
+                    iconNode.setAttribute('data-lucide', 'minus');
+                }
             }
 
             // Refresh icons for the toggle
@@ -170,4 +181,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Testimonials Carousel
+    const carouselContainer = document.querySelector('.testimonial-carousel-v2');
+    if (carouselContainer) {
+        const track = carouselContainer.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextBtn = carouselContainer.querySelector('.next-btn');
+        const prevBtn = carouselContainer.querySelector('.prev-btn');
+        const dotsContainer = carouselContainer.querySelector('.carousel-dots');
+
+        let currentIndex = 0;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        const updateDots = (index) => {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        };
+
+        const goToSlide = (index) => {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+
+            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots(currentIndex);
+        };
+
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+
+        // Optional: Auto-play
+        let autoPlayInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
+
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
+        });
+    }
 });
