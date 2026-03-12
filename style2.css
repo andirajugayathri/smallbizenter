@@ -963,9 +963,9 @@ a {
     padding: 24px;
     background: var(--v2-bg-soft);
     border-left: 4px solid var(--v2-primary);
-    border-radius: 0 12px 12px 0;
+    border-radius: 6px;
     font-style: italic;
-    color: var(--v2-primary) !important;
+    /* color: var(--v2-primary) !important; */
     font-weight: 500;
 }
 
@@ -3571,11 +3571,12 @@ a {
 
 .hero-quote-v3 {
     margin-top: 40px;
-    padding: 30px;
-    background: white;
+    padding: 20px 0px;
+    background: var(--v2-bg-soft);
     border-radius: var(--v2-radius-md);
     box-shadow: var(--v2-shadow-md);
     border-left: 5px solid var(--v2-primary);
+    
 }
 
 .hero-quote-v3 p {
@@ -3645,7 +3646,7 @@ a {
     padding: 18px 36px;
     border-radius: 100px;
     font-weight: 700;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -3676,4 +3677,10 @@ a {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Small Button Utility */
+.btn-sm {
+    padding: 10px 24px !important;
+    font-size: 14px !important;
 }
