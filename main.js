@@ -144,23 +144,27 @@ document.addEventListener('DOMContentLoaded', () => {
     setupTimeline('.process-section-v3', '.process-step-v3', '.timeline-progress-v3');
 
     // Mobile Menu Toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-v2');
     const mobileOverlay = document.querySelector('.mobile-overlay');
     const body = document.body;
 
     const toggleMenu = () => {
+        if (!navLinks || !mobileOverlay) return;
+        
         const isOpen = navLinks.classList.toggle('active');
         mobileOverlay.classList.toggle('active');
         body.classList.toggle('no-scroll');
 
-        const icon = navToggle.querySelector('i');
-        if (isOpen) {
-            icon.setAttribute('data-lucide', 'x');
-        } else {
-            icon.setAttribute('data-lucide', 'menu');
+        const iconNode = navToggle.querySelector('i');
+        if (iconNode) {
+            if (isOpen) {
+                iconNode.setAttribute('data-lucide', 'x');
+            } else {
+                iconNode.setAttribute('data-lucide', 'menu');
+            }
+            if (window.lucide) lucide.createIcons();
         }
-        if (window.lucide) lucide.createIcons();
     };
 
     if (navToggle) {
@@ -172,9 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Close menu when clicking links
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-v2 a').forEach(link => {
         link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
+            if (navLinks && navLinks.classList.contains('active')) {
                 toggleMenu();
             }
         });
