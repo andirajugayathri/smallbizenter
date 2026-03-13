@@ -205,7 +205,8 @@ a {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: var(--v2-bg-glass);
+    /* background: var(--v2-bg-glass); */
+    background-color: #ffffff;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
@@ -221,11 +222,16 @@ a {
 .logo-v2-wrapper {
     display: flex;
     align-items: center;
+    background-color: #FFFFFF;
+    padding: 30px 25px 0;
+    display: flex;
+    border-radius: 10px;
+    max-width: 250px;
 }
 
 .nav-logo {
-    height: 45px;
-    /* Adjust based on actual aspect ratio */
+    /* height: 45px; */
+   height: 60px;
     width: auto;
     display: block;
 }
