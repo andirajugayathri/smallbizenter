@@ -231,7 +231,7 @@ a {
 
 .nav-logo {
     /* height: 45px; */
-   height: 60px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -1699,6 +1699,20 @@ a {
     color: var(--v2-text-dark);
     font-size: 16px;
     margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-links-col h4::after,
+.footer-newsletter-v2 h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--v2-primary);
+    border-radius: 2px;
 }
 
 .footer-links-col ul {
@@ -1716,6 +1730,22 @@ a {
 
 .footer-links-col a:hover {
     color: var(--v2-primary);
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--v2-text-muted);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.footer-contact-info i {
+    width: 16px;
+    height: 16px;
+    color: var(--v2-primary);
+    margin-top: 4px;
 }
 
 .newsletter-form-v2 {
@@ -1761,7 +1791,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--v2-text-dark);
+    color: var(--v2-primary);
 }
 
 .social-links-v2 a:hover {
@@ -1772,7 +1802,7 @@ a {
 
 .footer-bottom-v2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 30px 0;
     border-top: 1px solid var(--v2-border);
