@@ -1850,6 +1850,7 @@ p {
     .hero-grid-v2 {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 0;
     }
 
     .hero-subtitle-v2 {
@@ -2004,7 +2005,7 @@ p {
     }
 
     .hero-v2-ref .hero-subtitle-v2 {
-        font-size: 15px;
+        font-size: 18px;
         margin-bottom: 30px;
     }
 
@@ -2431,7 +2432,7 @@ p {
     }
 
     .focal-image-wrap-v5 {
-        width: 300px;
+        width: 330px;
         height: 350px;
     }
 
@@ -2445,6 +2446,7 @@ p {
     .about-hero-v2 h1 {
         font-size: 3rem;
     }
+    
 }
 
 /* About Us Stunning Refinement */
@@ -2744,6 +2746,15 @@ p {
     font-style: italic;
     font-weight: 500;
 }
+@media (max-width: 991px) {
+    .main-mission-img {
+        height: 300px!important;
+    }
+    .mission-overlay-card {
+        padding: 10px 15px;
+        left: -10px;
+    }
+}
 
 /* Values Section Stunning Refinement */
 .values-section-v2 {
@@ -2928,6 +2939,13 @@ p {
 
 .team-image-collage:hover img {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .team-image-collage img {
+        height: 330px;
+        margin-top: 20px;
+    }
 }
 
 /* Journey Zigzag Timeline Stunning Refinement */
@@ -4348,4 +4366,4 @@ svg.lucide, i[data-lucide] {
     fill: none;
     display: inline-block;
     vertical-align: middle;
-}
+}
