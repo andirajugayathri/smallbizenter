@@ -1766,8 +1766,8 @@ p {
 
 .footer-contact-info i,
 .footer-contact-info svg {
-    width: 16px;
-    height: 16px;
+    width: 16px!important;
+    height: 16px!important;
     color: var(--v2-primary) !important;
     margin-top: 4px;
 }
@@ -4212,7 +4212,7 @@ textarea.form-control {
 .info-content p a,
 .info-content a {
     color: var(--v2-text-muted);
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6;
     margin: 0;
     text-decoration: none;
