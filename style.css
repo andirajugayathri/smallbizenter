@@ -1892,8 +1892,7 @@ p {
     }
 
     .about-visual-v2 {
-        order: -1;
-        /* image on top on mobile/tablet */
+        order: 0;
     }
 
     .footer-grid-v2 {
@@ -4004,7 +4003,7 @@ p {
     }
 
     .about-grid-v2 {
-        gap: 0;
+        gap: 40px;
     }
 
     .clients-v2 h2 {
@@ -4017,7 +4016,7 @@ p {
     }
 
     h2 {
-        font-size: 32px !important;
+        font-size: 34px !important;
     }
 
     .team-section-v2 {
