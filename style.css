@@ -650,8 +650,8 @@ p {
     font-family: var(--v2-font-display);
     font-weight: 900;
     font-size: 40px;
-    color: var(--v2-border);
-    opacity: 0.5;
+    color: var(--v2-primary);
+    /* opacity: 0.5; */
     transition: all 0.4s ease;
 }
 
@@ -1182,6 +1182,10 @@ p {
 @media (max-width: 1024px) {
     .services-grid-v2 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-glass-frame {
+        padding: 0;
     }
 }
 
@@ -1766,8 +1770,8 @@ p {
 
 .footer-contact-info i,
 .footer-contact-info svg {
-    width: 16px!important;
-    height: 16px!important;
+    width: 16px !important;
+    height: 16px !important;
     color: var(--v2-primary) !important;
     margin-top: 4px;
 }
@@ -2445,7 +2449,7 @@ p {
     .about-hero-v2 h1 {
         font-size: 3rem;
     }
-    
+
 }
 
 /* About Us Stunning Refinement */
@@ -2745,10 +2749,12 @@ p {
     font-style: italic;
     font-weight: 500;
 }
+
 @media (max-width: 991px) {
     .main-mission-img {
-        height: 300px!important;
+        height: 300px !important;
     }
+
     .mission-overlay-card {
         padding: 10px 15px;
         left: -10px;
@@ -3621,7 +3627,7 @@ p {
     }
 
     .cta-visual-v2 {
-        /* display: none; */
+        display: none;
         align-items: center !important;
         justify-content: center !important;
     }
@@ -4355,7 +4361,8 @@ textarea.form-control {
 }
 
 /* Lucide Icons Baseline */
-svg.lucide, i[data-lucide] {
+svg.lucide,
+i[data-lucide] {
     width: 24px;
     height: 24px;
     stroke: currentColor;
@@ -4365,4 +4372,97 @@ svg.lucide, i[data-lucide] {
     fill: none;
     display: inline-block;
     vertical-align: middle;
+}
+
+.card-learn-more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.learn-text {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--v2-primary);
+    transition: color 0.4s ease;
+}
+
+.learn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--v2-primary);
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.learn-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.service-card-alt:hover .learn-text {
+    color: white;
+}
+
+.service-card-alt:hover .learn-arrow {
+    background: white;
+    color: var(--v2-primary);
+}
+
+.service-card-alt .learn-arrow:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.s-star {
+    width: 20px;
+    height: 20px;
+    fill: #FFB800;
+    stroke: #FFB800;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.s-star-empty {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #FFB800;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.s-star-half-container {
+    position: relative;
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+}
+.s-star-half-container .s-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px !important;
+    height: 20px !important;
+}
+.s-star-half-container .s-star-empty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px !important;
+    height: 20px !important;
+}
+.star-fg-crop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
 }
