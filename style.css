@@ -4397,8 +4397,8 @@ textarea.form-control {
 /* Lucide Icons Baseline */
 svg.lucide,
 i[data-lucide] {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;
@@ -4499,4 +4499,11 @@ i[data-lucide] {
     width: 50%;
     height: 100%;
     overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+    svg.lucide,
+    i[data-lucide] {
+        width: 20px;
+        height: 20px;
+    }
 }
