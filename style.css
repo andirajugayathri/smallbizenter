@@ -1451,6 +1451,7 @@ p {
 @media (max-width: 1024px) {
     .why-split-v3 {
         flex-direction: column;
+        gap:10px;
     }
 
     .why-image-collage {
@@ -4506,4 +4507,17 @@ i[data-lucide] {
         width: 20px;
         height: 20px;
     }
+    .services-section-alt {
+        padding: 20px 0;
+    }
+    .clients-v2 {
+        padding: 20px 0;
+    }
+    .faq-v2 {
+    padding: 20px 0;
+    }
+    .cta-box-glass {
+        padding: 0;
+    }
+
 }
