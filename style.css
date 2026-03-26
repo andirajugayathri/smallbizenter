@@ -4802,5 +4802,8 @@ input[type="datetime-local"]:valid:before {
         gap: 20px;
         text-align: left;
     }
+    .form-group-v2 {
+        text-align: left;
+    }
 
 }
