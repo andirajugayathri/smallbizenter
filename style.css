@@ -1007,14 +1007,13 @@ p {
 }
 
 .discovery-form .btn-primary-v2 {
-    background: #ffffff; /* Inverted button */
-    color: var(--v2-primary);
-    border: none !important; /* Explicitly remove border */
+    background: var(--v2-primary);
+    color: #ffffff;
+    border: none !important; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .discovery-form .btn-primary-v2:hover {
-    background: #f8f8f8;
     transform: translateY(-2px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
