@@ -279,7 +279,7 @@ p {
     .mobile-middle-phone {
         display: flex;
     }
-    
+
     .mobile-nav-toggle {
         display: block;
     }
@@ -1314,6 +1314,7 @@ p {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -1323,6 +1324,7 @@ p {
     0% {
         transform: translateX(-50%);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -1468,7 +1470,7 @@ p {
 @media (max-width: 1024px) {
     .why-split-v3 {
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
     }
 
     .why-image-collage {
@@ -1484,7 +1486,7 @@ p {
 
 /* 6e. Testimonials v2 */
 .testimonials-v2 {
-    padding-bottom: 60px;
+    padding: 60px 0;
 }
 
 /* Carousel Structure */
@@ -4469,6 +4471,7 @@ i[data-lucide] {
     transform: scale(1.15);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .s-star {
     width: 20px;
     height: 20px;
@@ -4478,6 +4481,7 @@ i[data-lucide] {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
 .s-star-empty {
     width: 20px;
     height: 20px;
@@ -4487,12 +4491,14 @@ i[data-lucide] {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
 .s-star-half-container {
     position: relative;
     display: inline-flex;
     width: 20px;
     height: 20px;
 }
+
 .s-star-half-container .s-star {
     position: absolute;
     top: 0;
@@ -4500,6 +4506,7 @@ i[data-lucide] {
     width: 20px !important;
     height: 20px !important;
 }
+
 .s-star-half-container .s-star-empty {
     position: absolute;
     top: 0;
@@ -4507,6 +4514,7 @@ i[data-lucide] {
     width: 20px !important;
     height: 20px !important;
 }
+
 .star-fg-crop {
     position: absolute;
     top: 0;
@@ -4515,23 +4523,119 @@ i[data-lucide] {
     height: 100%;
     overflow: hidden;
 }
+
 @media screen and (max-width: 768px) {
+
     svg.lucide,
     i[data-lucide] {
         width: 20px;
         height: 20px;
     }
+
     .services-section-alt {
         padding: 20px 0;
     }
+}
+
+/* ==========================================================================
+   Discovery Form Section
+   ========================================================================== */
+.discovery-section-v1 {
+    background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.05), transparent),
+        radial-gradient(circle at bottom left, rgba(232, 93, 44, 0.05), transparent);
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.discovery-form-container {
+    margin: 0 auto;
+}
+
+.discovery-form-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-md);
+    padding: 48px;
+    box-shadow: var(--v2-shadow-glass);
+}
+
+.discovery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row-v2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label-v2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--v2-text-dark);
+    margin-left: 4px;
+}
+
+.discovery-form input,
+.discovery-form select {
+    width: 100%;
+    padding: 14px 20px;
+    background: #ffffff;
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--v2-text-dark);
+    transition: all 0.3s ease;
+}
+
+.discovery-form input:focus,
+.discovery-form select:focus {
+    outline: none;
+    border-color: var(--v2-primary);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.form-submit-v2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .discovery-section-v1 {
+        padding: 60px 0;
+    }
+
+    .form-row-v2 {
+        grid-template-columns: 1fr;
+    }
+
+    .discovery-form-card {
+        padding: 30px 20px;
+    }
+
     .clients-v2 {
         padding: 20px 0;
     }
+
     .faq-v2 {
-    padding: 20px 0;
+        padding: 20px 0;
     }
+
     .cta-box-glass {
         padding: 0;
     }
-
 }
