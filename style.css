@@ -1521,7 +1521,7 @@ p {
 
 /* 6e. Testimonials v2 */
 .testimonials-v2 {
-    padding: 60px 0;
+    padding-bottom: 60px;
 }
 
 /* Carousel Structure */
@@ -4708,7 +4708,6 @@ i[data-lucide] {
     box-shadow: var(--v2-shadow-glass) !important;
 }
 
-/* Custom Select Arrow */
 .discovery-form select {
     cursor: pointer;
     appearance: none;
@@ -4717,7 +4716,6 @@ i[data-lucide] {
     background-position: right 20px center;
 }
 
-/* Flatpickr Premium Styling */
 .flatpickr-calendar {
     border-radius: var(--v2-radius-sm) !important;
     border: 1px solid var(--v2-border) !important;
@@ -4732,6 +4730,60 @@ i[data-lucide] {
 
 .flatpickr-time input:focus {
     background: var(--v2-bg-soft) !important;
+}
+
+input[type="datetime-local"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-height: 52px; 
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Ensure placeholder-like behavior for native picker */
+input[type="datetime-local"]:before {
+    content: attr(placeholder);
+    width: 100%;
+}
+
+input[type="datetime-local"]:focus:before,
+input[type="datetime-local"]:valid:before {
+    content: "";
+    display: none;
+}
+
+/* --- Dual Icon Placement --- */
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-v2 {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--v2-text-muted);
+    pointer-events: none;
+    width: 18px;
+    height: 18px;
+}
+
+.input-icon-v2.icon-orange {
+    color: var(--v2-primary) !important;
 }
 
 .form-submit-v2 {

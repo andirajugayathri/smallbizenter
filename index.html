@@ -713,12 +713,15 @@
                                         <div class="form-group-v2">
                                             <label class="label-v2">Phone Number</label>
                                             <span class="wpcf7-form-control-wrap" data-name="phonetext-265">
-                                                <input id="phone" class="wpcf7-form-control wpcf7-phonetext" placeholder="Phone Number" type="tel" name="phonetext-265" required />
-                                                <input type="hidden" name="phonetext-265-country-code" id="phoneCountryCode" class="wpcf7-phonetext-country-code" />
+                                                <input id="phone" class="wpcf7-form-control wpcf7-phonetext"
+                                                    placeholder="Phone Number" type="tel" name="phonetext-265"
+                                                    required />
+                                                <input type="hidden" name="phonetext-265-country-code"
+                                                    id="phoneCountryCode" class="wpcf7-phonetext-country-code" />
                                             </span>
                                         </div>
                                     </div>
-        
+
                                     <div class="form-row-v2">
                                         <div class="form-group-v2">
                                             <label class="label-v2">Email Address</label>
@@ -729,7 +732,7 @@
                                             <input type="text" placeholder="Company Name" required>
                                         </div>
                                     </div>
-        
+
                                     <div class="form-group-v2">
                                         <label class="label-v2">Service Interested In</label>
                                         <select required>
@@ -743,15 +746,15 @@
                                             <option value="video-creation">Video Creation</option>
                                         </select>
                                     </div>
-        
+
                                     <div class="form-group-v2">
                                         <label class="label-v2">Preferred Meeting Date & Time</label>
                                         <div class="input-icon-wrapper">
-                                            <input type="text" id="datetime-picker" placeholder="Select Date & Time" required>
-                                            <i data-lucide="calendar" class="input-icon-v2"></i>
+                                            <input type="datetime-local" id="datetime-picker" required>
+                                            <i data-lucide="calendar" class="input-icon-v2 icon-orange"></i>
                                         </div>
                                     </div>
-        
+
                                     <div class="form-submit-v2">
                                         <button type="submit" class="btn-primary-v2 mt-3">
                                             <span>SUBMIT</span>
@@ -782,7 +785,7 @@
         // Initialize Intl-Tel-Input
         const phoneInput = document.querySelector("#phone");
         const countryCodeInput = document.querySelector("#phoneCountryCode");
-        
+
         if (phoneInput) {
             const iti = window.intlTelInput(phoneInput, {
                 initialCountry: "au",
@@ -791,7 +794,7 @@
             });
 
             // Update hidden field on change
-            phoneInput.addEventListener("countrychange", function() {
+            phoneInput.addEventListener("countrychange", function () {
                 const countryData = iti.getSelectedCountryData();
                 countryCodeInput.value = countryData.dialCode;
             });
@@ -799,15 +802,6 @@
             // Set initial value
             countryCodeInput.value = iti.getSelectedCountryData().dialCode;
         }
-
-        // Initialize Flatpickr
-        flatpickr("#datetime-picker", {
-            enableTime: true,
-            dateFormat: "d-m-Y H:i",
-            minDate: "today",
-            time_24hr: true,
-            placeholder: "Select Date & Time"
-        });
 
         // Discovery Form Animation Placeholder
         // (You can add submission logic here later)
