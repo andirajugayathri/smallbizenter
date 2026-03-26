@@ -12,6 +12,10 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <!-- Intl-Tel-Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/css/intlTelInput.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -457,76 +461,7 @@
             </div>
         </section>
 
-        <!-- Discovery Form Section (New) -->
-        <section id="discovery" class="discovery-section-v1 section-padding reveal">
-            <div class="container">
-                <div class="discovery-form-container">
-                    <div class="section-head-v2 center mb-5">
-                        <span class="eyebrow-v2">Get Started</span>
-                        <h2>Let's Connect</h2>
-                    </div>
-                    <div class="discovery-form-card">
-                        
-                        <form id="discoveryForm" class="discovery-form">
-                            <div class="form-row-v2">
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Full Name</label>
-                                    <input type="text" placeholder="Your Name" required>
-                                </div>
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Phone Number</label>
-                                    <input type="tel" placeholder="Your Phone" required>
-                                </div>
-                            </div>
 
-                            <div class="form-row-v2">
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Email Address</label>
-                                    <input type="email" placeholder="Your Email" required>
-                                </div>
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Business Name</label>
-                                    <input type="text" placeholder="Company Name" required>
-                                </div>
-                            </div>
-
-                            <div class="form-row-v2">
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Business Location</label>
-                                    <input type="text" placeholder="Where is your business located?" required>
-                                </div>
-
-                                <div class="form-group-v2">
-                                    <label class="label-v2">Service Interested In</label>
-                                    <select required>
-                                        <option value="" disabled selected>Select a Service</option>
-                                        <option value="digital-marketing">Digital Marketing</option>
-                                        <option value="seo">SEO</option>
-                                        <option value="google-ads">Google Ads</option>
-                                        <option value="social-media">Social Media Marketing</option>
-                                        <option value="web-design">Website Design / Development</option>
-                                        <option value="brand-awareness">Brand Awareness</option>
-                                        <option value="video-creation">Video Creation</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group-v2">
-                                <label class="label-v2">Preferred Meeting Date & Time</label>
-                                <input type="datetime-local" required>
-                            </div>
-
-                            <div class="form-submit-v2">
-                                <button type="submit" class="link-arrow-v2 mt-2">
-                                    <span>Submit</span>
-                                    <i data-lucide="arrow-right"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Testimonials v2 -->
         <section class="testimonials-v2">
@@ -752,8 +687,8 @@
             </div>
         </section>
 
-        <!-- CTA Section (Premium Light version) -->
-        <section class="cta-v2">
+        <!-- CTA Section (Discovery Form) -->
+        <section id="discovery" class="cta-v2 reveal">
             <div class="container">
                 <div class="cta-box-glass">
                     <div class="cta-grid-v2">
@@ -762,15 +697,68 @@
                             <h2>Ready to Stop Blending In and<br>Start Standing Out?</h2>
                             <p>Let's talk about where your business is today and where you want it to go. Your free
                                 consultation is one click away.</p>
-                            <div class="cta-actions-v2">
-                                <a href="contact.html" class="btn-primary-v2 btn-lg">Book My Free Strategy Call</a>
+                            <!-- <div class="cta-actions-v2">
+                                <a href="#discovery" class="btn-primary-v2 btn-lg">Book My Free Strategy Call</a>
                                 <a href="services.html" class="btn-outline-v2 btn-lg">Explore Our Services</a>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="cta-visual-v2">
-                            <div class="image-glass-frame">
-                                <img src="images/hero-professional-coat.png" alt="Small Biz Enter Consultation"
-                                    class="img-fluid rounded-lg">
+                        <div class="cta-form-col">
+                            <div class="discovery-form-card">
+                                <form id="discoveryForm" class="discovery-form">
+                                    <div class="form-row-v2">
+                                        <div class="form-group-v2">
+                                            <label class="label-v2">Full Name</label>
+                                            <input type="text" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="form-group-v2">
+                                            <label class="label-v2">Phone Number</label>
+                                            <span class="wpcf7-form-control-wrap" data-name="phonetext-265">
+                                                <input id="phone" class="wpcf7-form-control wpcf7-phonetext" placeholder="Phone Number" type="tel" name="phonetext-265" required />
+                                                <input type="hidden" name="phonetext-265-country-code" id="phoneCountryCode" class="wpcf7-phonetext-country-code" />
+                                            </span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-row-v2">
+                                        <div class="form-group-v2">
+                                            <label class="label-v2">Email Address</label>
+                                            <input type="email" placeholder="Your Email" required>
+                                        </div>
+                                        <div class="form-group-v2">
+                                            <label class="label-v2">Business Name</label>
+                                            <input type="text" placeholder="Company Name" required>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group-v2">
+                                        <label class="label-v2">Service Interested In</label>
+                                        <select required>
+                                            <option value="" disabled selected>Select a Service</option>
+                                            <option value="digital-marketing">Digital Marketing</option>
+                                            <option value="seo">SEO</option>
+                                            <option value="google-ads">Google Ads</option>
+                                            <option value="social-media">Social Media Marketing</option>
+                                            <option value="web-design">Website Design / Development</option>
+                                            <option value="brand-awareness">Brand Awareness</option>
+                                            <option value="video-creation">Video Creation</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="form-group-v2">
+                                        <label class="label-v2">Preferred Meeting Date & Time</label>
+                                        <div class="input-icon-wrapper">
+                                            <input type="text" id="datetime-picker" placeholder="Select Date & Time" required>
+                                            <i data-lucide="calendar" class="input-icon-v2"></i>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-submit-v2">
+                                        <button type="submit" class="btn-primary-v2 mt-3">
+                                            <span>SUBMIT</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -786,6 +774,44 @@
 
     <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
     <script src="main.js"></script>
+    <!-- Intl-Tel-Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/intlTelInput.min.js"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize Intl-Tel-Input
+        const phoneInput = document.querySelector("#phone");
+        const countryCodeInput = document.querySelector("#phoneCountryCode");
+        
+        if (phoneInput) {
+            const iti = window.intlTelInput(phoneInput, {
+                initialCountry: "au",
+                separateDialCode: true,
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/utils.js",
+            });
+
+            // Update hidden field on change
+            phoneInput.addEventListener("countrychange", function() {
+                const countryData = iti.getSelectedCountryData();
+                countryCodeInput.value = countryData.dialCode;
+            });
+
+            // Set initial value
+            countryCodeInput.value = iti.getSelectedCountryData().dialCode;
+        }
+
+        // Initialize Flatpickr
+        flatpickr("#datetime-picker", {
+            enableTime: true,
+            dateFormat: "d-m-Y H:i",
+            minDate: "today",
+            time_24hr: true,
+            placeholder: "Select Date & Time"
+        });
+
+        // Discovery Form Animation Placeholder
+        // (You can add submission logic here later)
+    </script>
 </body>
 
 </html>

@@ -933,30 +933,30 @@ p {
 
 /* 6. CTA Section */
 .cta-v2 {
-    padding: 40px 0 40px;
+    padding: 60px 0; /* Increased padding */
     background: var(--v2-bg-pure);
 }
 
 .cta-box-glass {
-    /* background: var(--v2-gradient-bg);
-    border-radius: var(--v2-radius-lg); */
-    padding: 60px 80px;
+    padding: 20px 0; /* Minimal vertical padding */
     text-align: left;
-    /* border: 1px solid var(--v2-border); */
     position: relative;
     overflow: hidden;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .cta-grid-v2 {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.2fr; /* Adjusted for form width */
+    gap: 80px;
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
-.cta-visual-v2 {
+.cta-form-col {
     position: relative;
 }
 
@@ -978,14 +978,49 @@ p {
 }
 
 .cta-content-inner p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 40px;
+    color: var(--v2-text-muted);
 }
 
 .cta-actions-v2 {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
+}
+
+/* Datepicker Icon Styling */
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-v2 {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--v2-primary);
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+}
+
+.discovery-form .btn-primary-v2 {
+    background: #ffffff; /* Inverted button */
+    color: var(--v2-primary);
+    border: none !important; /* Explicitly remove border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.discovery-form .btn-primary-v2:hover {
+    background: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.input-icon-wrapper input {
+    padding-right: 50px !important;
 }
 
 /* 6a. About Strip v2 */
@@ -1933,10 +1968,11 @@ p {
     .cta-grid-v2 {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 0;
     }
 
     .cta-box-glass {
-        padding: 50px 30px;
+        padding: 40px 0;
     }
 
     .cta-actions-v2 {
@@ -1945,9 +1981,9 @@ p {
         align-items: center;
     }
 
-    .cta-visual-v2 {
-        margin-top: 20px;
-    }
+    /* .cta-form-col {
+        margin-top: 40px;
+    } */
 
     .about-visual-v2 {
         order: 0;
@@ -3995,7 +4031,7 @@ p {
     flex-direction: column;
 }
 
-.service-card-alt::before {
+/* .service-card-alt::before {
     content: '';
     position: absolute;
     top: 0;
@@ -4005,22 +4041,22 @@ p {
     background: var(--v2-primary);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
-}
+} */
 
 .service-card-alt:hover::before {
     height: 100%;
 }
 
-.service-card-alt:hover {
+/* .service-card-alt:hover {
     border-color: var(--v2-primary);
     transform: translateY(-10px);
     box-shadow: 0 25px 50px rgba(255, 107, 53, 0.2);
-}
+} */
 
-.service-card-alt:hover h3,
+/* .service-card-alt:hover h3,
 .service-card-alt:hover p {
     color: white !important;
-}
+} */
 
 .service-card-alt .card-icon {
     width: 60px;
@@ -4035,11 +4071,11 @@ p {
     transition: all 0.4s ease;
 }
 
-.service-card-alt:hover .card-icon {
+/* .service-card-alt:hover .card-icon {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     transform: scale(1.1);
-}
+} */
 
 .service-card-alt h3 {
     font-size: 24px;
@@ -4458,7 +4494,7 @@ i[data-lucide] {
     height: 20px;
 }
 
-.service-card-alt:hover .learn-text {
+/* .service-card-alt:hover .learn-text {
     color: white;
 }
 
@@ -4470,7 +4506,7 @@ i[data-lucide] {
 .service-card-alt .learn-arrow:hover {
     transform: scale(1.15);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .s-star {
     width: 20px;
@@ -4540,52 +4576,50 @@ i[data-lucide] {
 /* ==========================================================================
    Discovery Form Section
    ========================================================================== */
-.discovery-section-v1 {
-    background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.05), transparent),
-        radial-gradient(circle at bottom left, rgba(232, 93, 44, 0.05), transparent);
-    background-color: #ffffff;
-    position: relative;
-    overflow: hidden;
-    padding: 60px 0;
-}
+/* ==========================================================================
+   Discovery Form Section (Simple Design)
+   ========================================================================== */
+
 
 .discovery-form-container {
+    max-width: 800px;
     margin: 0 auto;
 }
 
+/* Minimalist Professional Card */
 .discovery-form-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--v2-border);
+    background: var(--v2-bg-soft);
+    border: none;
     border-radius: var(--v2-radius-md);
-    padding: 48px;
-    box-shadow: var(--v2-shadow-glass);
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+    color: #000; 
 }
 
 .discovery-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
 }
 
 .form-row-v2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
 .form-group-v2 {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .label-v2 {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--v2-text-dark);
+    font-weight: 700;
+    color: #000; 
     margin-left: 4px;
+    margin-bottom: 8px;
 }
 
 .discovery-form input,
@@ -4593,49 +4627,129 @@ i[data-lucide] {
     width: 100%;
     padding: 14px 20px;
     background: #ffffff;
-    border: 1px solid var(--v2-border);
-    border-radius: var(--v2-radius-sm);
-    font-family: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--v2-radius-sm) !important;
+    font-family: var(--v2-font-body);
+    font-size: 1rem;
+    color: var(--v2-text-dark);
+    transition: all 0.3s ease;
+}
+
+/* Separate rule for Phone Input to support half-and-half */
+.iti__input {
+    width: 100%;
+    padding: 14px 20px 14px 105px !important; /* Offset for grey area */
+    background: transparent !important;
+    border: none !important;
+    border-radius: var(--v2-radius-sm) !important;
+    font-family: var(--v2-font-body);
     font-size: 1rem;
     color: var(--v2-text-dark);
     transition: all 0.3s ease;
 }
 
 .discovery-form input:focus,
-.discovery-form select:focus {
-    outline: none;
-    border-color: var(--v2-primary);
+.discovery-form select:focus,
+.iti--focus .iti__input {
+    outline: none !important;
+    border-color: var(--v2-primary) !important;
+    background: #ffffff !important;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
+.iti__input {
+    padding-left: 105px !important; /* Offset for fixed-width flag area */
+}
+
+/* Intl-Tel-Input Overrides */
+.iti {
+    width: 100%;
+    display: block;
+    background: linear-gradient(to right, #f5f5f5 95px, #ffffff 95px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--v2-radius-sm) !important;
+}
+.iti__selected-country {
+    background-color: #f5f5f5 !important;
+    padding: 0 5px !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 10px 0px 0px 10px !important;
+    border-right: 1px solid #e0e0e0 !important;
+    width: 95px !important;
+    z-index: 10 !important;
+}
+
+.iti__selected-flag {
+    padding: 0 12px !important;
+    background-color: transparent !important; /* Managed by .iti gradient */
+    border-radius: 12px 0 0 12px !important;
+    border-right: 1px solid #e0e0e0 !important;
+    width: 95px !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10 !important;
+}
+
+.iti__flag-container {
+    z-index: 11 !important;
+    padding: 1px !important; /* Inset from input border */
+}
+
+.iti__selected-dial-code {
+    font-weight: 600;
+    color: var(--v2-text-dark);
+}
+
+.iti__country-list {
+    border-radius: var(--v2-radius-sm) !important;
+    border: 1px solid var(--v2-border) !important;
+    box-shadow: var(--v2-shadow-glass) !important;
+}
+
+/* Custom Select Arrow */
+.discovery-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
+/* Flatpickr Premium Styling */
+.flatpickr-calendar {
+    border-radius: var(--v2-radius-sm) !important;
+    border: 1px solid var(--v2-border) !important;
+    box-shadow: var(--v2-shadow-glass) !important;
+    font-family: var(--v2-font-body) !important;
+}
+
+.flatpickr-day.selected {
+    background: var(--v2-primary) !important;
+    border-color: var(--v2-primary) !important;
+}
+
+.flatpickr-time input:focus {
+    background: var(--v2-bg-soft) !important;
+}
+
 .form-submit-v2 {
+    width: 100%;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-    .discovery-section-v1 {
-        padding: 60px 0;
+    .discovery-form-card {
+        padding: 40px 20px;
     }
 
     .form-row-v2 {
         grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: left;
     }
 
-    .discovery-form-card {
-        padding: 30px 20px;
-    }
-
-    .clients-v2 {
-        padding: 20px 0;
-    }
-
-    .faq-v2 {
-        padding: 20px 0;
-    }
-
-    .cta-box-glass {
-        padding: 0;
-    }
 }
