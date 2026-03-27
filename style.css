@@ -1608,7 +1608,7 @@ p {
 }
 
 .testimonial-premium-v2 {
-    background: white;
+    background: var(--v2-bg-soft);
     border-radius: 24px;
     padding: 40px;
     box-shadow: 0 20px 40px rgba(42, 23, 8, 0.05);
