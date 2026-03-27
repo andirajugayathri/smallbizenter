@@ -5038,7 +5038,7 @@ input[type="datetime-local"]:valid:before {
 }
 
 .sticky-icon:hover {
-    transform: scale(1.15) translateX(8px);
+    transform: scale(1.15) translateX(0px);
 }
 
 .sticky-icon::before {
