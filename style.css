@@ -5069,8 +5069,7 @@ input[type="datetime-local"]:valid:before {
         left: 20px;
         bottom: 30px;
         top: auto;
-        transform: none;
-        /* flex-direction: row; */
+        transform: none;   
         gap: 10px;
     }
 
