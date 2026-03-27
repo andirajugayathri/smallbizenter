@@ -1375,7 +1375,7 @@ p {
 
 /* 6d. Why Choose Us v2 */
 .why-v3 {
-    padding: 60px 0;
+    padding-top: 60px;
     overflow: hidden;
     background: var(--v2-bg-pure);
 }
@@ -4877,6 +4877,29 @@ input[type="datetime-local"]:valid:before {
     margin-top: 60px;
 }
 
+.section-desc-v2 {
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: 1.1rem;
+    color: var(--v2-text-muted);
+    line-height: 1.6;
+}
+
+.half-line {
+    width: 60px;
+    height: 4px;
+    background: var(--v2-primary);
+    margin: 30px auto 0;
+    border-radius: 4px;
+}
+
+.half-line-about {
+    width: 50%;
+    height: 1px;
+    background: var(--v2-border);
+    margin: 25px 0;
+}
+
 .ind-card {
     padding: 40px 30px;
     border-radius: var(--v2-radius-md);
@@ -4957,6 +4980,7 @@ input[type="datetime-local"]:valid:before {
     .ind-grid {
         grid-template-columns: 1fr;
     }
+
     .industries-v2 {
         padding: 60px 0;
     }
