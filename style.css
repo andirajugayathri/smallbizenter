@@ -2099,8 +2099,9 @@ p {
         padding-top: 130px;
         /* Push below header */
     }
-    .hero-title-v2{
-        font-size: 40px!important;
+
+    .hero-title-v2 {
+        font-size: 40px !important;
     }
 
     .hero-v2-ref .hero-title-v2 {
@@ -4113,7 +4114,8 @@ p {
         gap: 40px;
         text-align: left;
     }
-    .highlight-box-v2{
+
+    .highlight-box-v2 {
         margin-top: 30px;
     }
 
@@ -4857,4 +4859,108 @@ input[type="datetime-local"]:valid:before {
         text-align: left;
     }
 
+}
+
+/* ---------------------------------------------------------
+   Industries We Serve & Results Delivered (Card Design)
+   --------------------------------------------------------- */
+.industries-v2 {
+    padding-bottom: 60px;
+    background: var(--v2-bg-pure);
+    position: relative;
+}
+
+.ind-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.ind-card {
+    padding: 40px 30px;
+    border-radius: var(--v2-radius-md);
+    background: var(--v2-bg-pure);
+    border: 1px solid var(--v2-border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ind-card:hover {
+    box-shadow: var(--v2-shadow-glass);
+    border-color: var(--v2-primary);
+}
+
+.ind-icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--v2-bg-soft);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--v2-primary);
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.ind-card:hover .ind-icon-box {
+    background: var(--v2-primary);
+    color: #fff;
+}
+
+.ind-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--v2-text-dark);
+    font-weight: 700;
+}
+
+.ind-card p {
+    font-size: 15px;
+    color: var(--v2-text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.ind-result-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(16, 185, 129, 0.08);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px dashed var(--v2-success);
+}
+
+.ind-result-icon {
+    color: var(--v2-success);
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.ind-result-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #065f46;
+    line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+    .ind-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .ind-grid {
+        grid-template-columns: 1fr;
+    }
+    .industries-v2 {
+        padding: 60px 0;
+    }
 }
