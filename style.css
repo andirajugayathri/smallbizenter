@@ -4989,3 +4989,102 @@ input[type="datetime-local"]:valid:before {
         padding: 60px 0;
     }
 }
+
+/* ---------------------------------------------------------
+   6g. Sticky Contact Sidebar
+   --------------------------------------------------------- */
+.sticky-contact-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.sticky-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    background: white;
+}
+
+.sticky-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sticky-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.sticky-icon.phone {
+    background: var(--v2-primary);
+}
+
+.sticky-icon.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 18px; /* Rounded square like screenshot */
+}
+
+.sticky-icon:hover {
+    transform: scale(1.15) translateX(8px);
+}
+
+.sticky-icon::before {
+    content: attr(title);
+    position: absolute;
+    left: 100%;
+    margin-left: 20px;
+    background: var(--v2-text-dark);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.sticky-icon:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 991px) {
+    .sticky-contact-sidebar {
+        left: 20px;
+        bottom: 30px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .sticky-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sticky-icon i, .sticky-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .sticky-icon::before {
+        display: none;
+    }
+}
