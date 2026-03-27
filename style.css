@@ -1979,9 +1979,13 @@ p {
         gap: 0;
     }
 
-    .cta-box-glass {
-        padding: 40px 0;
+    .clients-v2 {
+        padding: 20px 0;
     }
+
+    /* .cta-box-glass {
+        padding: 40px 0;
+    } */
 
     .cta-actions-v2 {
         justify-content: center;
