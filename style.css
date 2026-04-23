@@ -1926,6 +1926,18 @@ p {
     color: var(--v2-primary);
 }
 
+.social-links-v2 a i,
+.social-links-v2 a svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: inline-block !important;
+    color: inherit !important;
+    stroke: currentColor !important;
+    stroke-width: 2px !important;
+    fill: none !important;
+    visibility: visible !important;
+}
+
 .social-links-v2 a:hover {
     background: var(--v2-primary);
     color: white;
@@ -5034,7 +5046,8 @@ input[type="datetime-local"]:valid:before {
 
 .sticky-icon.whatsapp {
     background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 18px; /* Rounded square like screenshot */
+    border-radius: 18px;
+    /* Rounded square like screenshot */
 }
 
 .sticky-icon:hover {
@@ -5056,7 +5069,7 @@ input[type="datetime-local"]:valid:before {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .sticky-icon:hover::before {
@@ -5069,7 +5082,7 @@ input[type="datetime-local"]:valid:before {
         left: 20px;
         bottom: 30px;
         top: auto;
-        transform: none;   
+        transform: none;
         gap: 10px;
     }
 
@@ -5078,12 +5091,1129 @@ input[type="datetime-local"]:valid:before {
         height: 50px;
     }
 
-    .sticky-icon i, .sticky-icon svg {
+    .sticky-icon i,
+    .sticky-icon svg {
         width: 22px;
         height: 22px;
     }
 
     .sticky-icon::before {
         display: none;
+    }
+}
+
+/* Google Ads Hero Section Styles */
+.hero-google-ads {
+    padding: 160px 0 100px;
+    background-color: #FDF2F0;
+    /* Soft peach/beige background */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-google-ads .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.badge-google-ads {
+    display: inline-block;
+    background: #F55E27;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.hero-heading {
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.1;
+    color: #2A1708;
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.hero-paragraph {
+    font-size: 20px;
+    color: #4A3C34;
+    max-width: 500px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Portal Frame Strategy */
+.portal-frame {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portal-img-container {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 5;
+    background: #F55E27; /* The portal background circle */
+}
+
+.portal-img-container .main-hero-img {
+    height: 120%; /* Large occupy scale */
+    width: auto;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.portal-img-popout {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.portal-img-popout .main-hero-img {
+    height: 120%; /* EXACT same scale */
+    width: auto;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Clip path to only show the part that sticks out above the circle */
+    clip-path: inset(-500px -500px 300px -500px); 
+    /* Offset by the waistline to show only head/hands */
+    object-fit: contain;
+}
+
+.bg-circle-dec {
+    display: none; /* Replaced by portal-img-container background */
+}
+
+.google-rating-badge {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    z-index: 20;
+    background: #ffffff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F0F0F0;
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+.client-review-summary {
+    position: absolute;
+    bottom: 60px;
+    left: -40px;
+    z-index: 20;
+    background: #ffffff;
+    padding: 12px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F0F0F0;
+    animation: float-slow 7s ease-in-out infinite reverse;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-group img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-left: -10px;
+}
+
+.avatar-group img:first-child {
+    margin-left: 0;
+}
+
+.review-text-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2A1708;
+    white-space: nowrap;
+}
+
+.star-rating,
+.tiny-stars {
+    display: flex;
+    gap: 2px;
+    color: #FBBF24;
+}
+
+.star-rating i,
+.tiny-stars i {
+    width: 14px;
+    height: 14px;
+    fill: #FBBF24 !important;
+    color: #FBBF24 !important;
+    stroke: #FBBF24;
+}
+
+.badge-title {
+    font-weight: 700;
+    color: #2A1708;
+    font-size: 14px;
+    margin-bottom: 2px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Icons Cluster */
+.icons-cluster {
+    position: absolute;
+    top: 90px;
+    right: -100px;
+    z-index: 10;
+    width: 320px;
+    animation: float-v2 5s ease-in-out infinite alternate;
+}
+
+.icons-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* Section Below Hero */
+.text-primary-v2 {
+    color: #F55E27 !important;
+}
+
+.fs-clamp-hl {
+    font-size: clamp(32px, 4.5vw, 48px);
+    line-height: 1.25;
+    font-weight: 800;
+    color: #2A1708;
+    letter-spacing: -0.5px;
+}
+
+.text-muted-v2 {
+    color: #4A3C34;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.fs-13 {
+    font-size: 13px;
+}
+
+.ls-1 {
+    letter-spacing: 1.5px;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.section-padding {
+    padding: 100px 0;
+    background-color: #ffffff;
+    /* White background for lower sections */
+}
+
+.color-dark {
+    color: #2A1708;
+}
+
+/* ==========================================================================
+   GOOGLE ADS LANDING PAGE - UNIQUE STYLES (Ref 593)
+   ========================================================================== */
+
+/* Why Google Ads Section */
+.gads-why {
+    padding: 120px 0 !important;
+    background-color: #FDF9F7 !important;
+}
+
+.gads-dual-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 80px !important;
+    align-items: center !important;
+}
+
+.gads-eyebrow {
+    color: #F55E27 !important;
+    font-size: 14px !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+}
+
+.rounded-premium {
+    border-radius: 24px !important;
+}
+
+.gads-checklist {
+    list-style: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+}
+
+.gads-checklist li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    font-size: 17px !important;
+    color: #4A3C34 !important;
+    font-weight: 500 !important;
+}
+
+.gads-checklist li i,
+.gads-checklist li svg {
+    color: #F55E27 !important;
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+    stroke-width: 2 !important;
+}
+
+@media (max-width: 991px) {
+    .gads-dual-row {
+        grid-template-columns: 1fr !important;
+        gap: 50px !important;
+        text-align: center !important;
+    }
+
+    .gads-checklist li {
+        justify-content: center !important;
+        text-align: left !important;
+    }
+
+    .gads-why {
+        padding: 80px 0 !important;
+    }
+}
+
+/* Our Google Ads Services Section */
+.gads-services {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-tabs-nav-wrapper {
+    margin: 40px 0 !important;
+    padding: 0 15px !important;
+}
+
+.gads-tabs-nav {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+}
+
+.gads-tab-btn {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 16px 32px !important;
+    background: #ffffff !important;
+    border: 1.5px solid #F3F4F6 !important;
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    color: #F55E27 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-size: 16px !important;
+    box-shadow: none !important;
+}
+
+.gads-tab-btn i {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.gads-tab-btn:hover {
+    border-color: #F55E27 !important;
+    background: rgba(245, 94, 39, 0.05) !important;
+}
+
+.gads-tab-btn.active {
+    background: #F55E27 !important;
+    border-color: #F55E27 !important;
+    color: #ffffff !important;
+    box-shadow: 0 15px 30px rgba(245, 94, 39, 0.2) !important;
+}
+
+.gads-tabs-container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+}
+
+.gads-tab-pane {
+    display: none !important;
+    animation: gadsFadeIn 0.4s ease-out !important;
+}
+
+.gads-tab-pane.active {
+    display: block !important;
+}
+
+.gads-tab-card {
+    background: #ffffff !important;
+    padding: 70px !important;
+    border-radius: 40px !important;
+    text-align: left !important;
+    box-shadow: 0 50px 120px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #F0F0F0 !important;
+    margin-top: 20px !important;
+}
+
+.gads-benefits-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 100px !important;
+    row-gap: 30px !important;
+    margin-top: 40px !important;
+}
+
+.gads-benefit-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    color: #333333 !important;
+    font-size: 18px !important;
+}
+
+.gads-benefit-item svg {
+    background-color: #F55E27 !important;
+    color: #ffffff !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 8px !important;
+    border-radius: 50% !important;
+    stroke-width: 4 !important;
+    flex-shrink: 0 !important;
+}
+
+@keyframes gadsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .gads-benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        column-gap: 0 !important;
+    }
+
+    .gads-tab-card {
+        padding: 40px 25px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gads-tabs-nav {
+        gap: 10px !important;
+    }
+
+    .gads-tab-btn {
+        padding: 12px 18px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* What Makes Us Different Section (Step Id 647) */
+.gads-features {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+}
+
+.gads-feature-card {
+    background: #ffffff !important;
+    border: 1.5px solid #F3F4F6 !important;
+    border-radius: 40px !important;
+    padding: 50px !important;
+    box-shadow: 0 50px 120px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.gads-feature-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 60px 140px rgba(245, 94, 39, 0.08) !important;
+    border-color: rgba(245, 94, 39, 0.1) !important;
+}
+
+.gads-feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+    background-color: rgba(245, 94, 39, 0.08) !important;
+    color: #F55E27 !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 35px !important;
+}
+
+.gads-feature-icon i,
+.gads-feature-icon svg {
+    width: 26px !important;
+    height: 26px !important;
+    stroke-width: 2.5 !important;
+}
+
+.gads-feature-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.gads-feature-list li {
+    position: relative !important;
+    padding-left: 20px !important;
+    margin-bottom: 10px !important;
+    color: #4A3C34 !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+.gads-feature-list li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 9px !important;
+    width: 5px !important;
+    height: 5px !important;
+    background-color: #F55E27 !important;
+    border-radius: 50% !important;
+    /* Round dots (Ref 755) */
+}
+
+@media (max-width: 1100px) {
+    .gads-features-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gads-features-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gads-feature-card {
+        padding: 40px 25px !important;
+    }
+
+    .gads-features {
+        padding: 80px 0 !important;
+    }
+}
+
+/* Shared Google Ads Section Header Styles (Ref 727) */
+.gads-section-header {
+    text-align: center !important;
+}
+
+.gads-section-header h2 {
+    font-size: clamp(32px, 5vw, 48px) !important;
+    line-height: 1.2 !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.gads-section-header p {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    max-width: 850px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    color: #6B7280 !important;
+    /* Soft grey */
+}
+
+/* Benefits of Hiring an Agency Section (Ref 811) */
+.gads-benefits {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-benefits-row {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 80px !important;
+    align-items: center !important;
+}
+
+.gads-benefits-check-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 30px !important;
+}
+
+.gads-check-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    color: #4A3C34 !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+
+.gads-check-item i,
+.gads-check-item svg {
+    color: #F55E27 !important;
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 2.5 !important;
+    flex-shrink: 0 !important;
+}
+
+.gads-benefits-visual img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 1100px) {
+    .gads-benefits-row {
+        gap: 50px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .gads-benefits-row {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    .gads-benefits-content {
+        order: 1 !important;
+    }
+
+    .gads-benefits-visual {
+        order: 2 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+
+    .gads-benefits-check-grid {
+        text-align: left !important;
+        max-width: 500px !important;
+        margin: 0 auto 30px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .gads-benefits-check-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Our Google Ads Process Section (Ref 816) */
+.gads-process {
+    padding: 120px 0 !important;
+    background-color: #FDF9F7 !important;
+}
+
+.gads-process-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+}
+
+.gads-process-card {
+    background: #ffffff !important;
+    border: 1.5px solid #F3F4F6 !important;
+    border-radius: 40px !important;
+    padding: 30px !important;
+    box-shadow: 0 50px 120px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.4s ease !important;
+    position: relative !important;
+}
+
+.gads-process-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 60px 140px rgba(245, 94, 39, 0.08) !important;
+    border-color: rgba(245, 94, 39, 0.1) !important;
+}
+
+.gads-step-badge {
+    width: 44px !important;
+    height: 44px !important;
+    background-color: #F55E27 !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+    margin-bottom: 25px !important;
+}
+
+@media (max-width: 1100px) {
+    .gads-process-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gads-process-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gads-process-card {
+        padding: 40px 25px !important;
+    }
+
+    .gads-process {
+        padding: 80px 0 !important;
+    }
+}
+
+/* Industries We Work With Section (Ref 743) */
+.gads-industries {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-industries-grid {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    max-width: 1200px !important;
+    margin: 40px auto 0 !important;
+}
+
+.gads-industry-card {
+    background-color: #FDF9F7 !important;
+    /* Soft warm off-white */
+    border-radius: 20px !important;
+    padding: 30px 20px !important;
+    width: calc(14.28% - 15px) !important;
+    /* Support 7 items in a row */
+    min-width: 140px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.gads-industry-card:hover {
+    transform: translateY(-5px) !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.gads-industry-icon {
+    color: #F55E27 !important;
+    width: 42px !important;
+    height: 42px !important;
+}
+
+.gads-industry-icon i,
+.gads-industry-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    stroke-width: 2 !important;
+}
+
+.gads-industry-name {
+    font-weight: 700 !important;
+    color: #2A1708 !important;
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+}
+
+@media (max-width: 1100px) {
+    .gads-industry-card {
+        width: calc(33.33% - 15px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gads-industry-card {
+        width: calc(50% - 15px) !important;
+    }
+
+    .gads-industries {
+        padding: 80px 0 !important;
+    }
+}
+
+/* Management Packages Section (Ref 859) */
+.gads-pricing {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-pricing-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    align-items: center !important;
+    margin-top: 50px !important;
+}
+
+.gads-pricing-card {
+    background: #ffffff !important;
+    border-radius: 40px !important;
+    padding: 50px 40px !important;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.04) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    transition: all 0.4s ease !important;
+    border: 1.5px solid #F3F4F6 !important;
+}
+
+.gads-pricing-card.featured {
+    background-color: #F55E27 !important;
+    color: #ffffff !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 50px 120px rgba(245, 94, 39, 0.2) !important;
+    border: none !important;
+}
+
+.gads-package-name {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    color: inherit !important;
+}
+
+.gads-price {
+    font-size: 52px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    margin-bottom: 10px !important;
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 5px !important;
+}
+
+.gads-currency {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+.gads-suffix {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    opacity: 0.8 !important;
+}
+
+.gads-tagline {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    opacity: 0.9 !important;
+    margin-bottom: 0 !important;
+}
+
+.gads-price-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+}
+
+.gads-price-list li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: inherit !important;
+}
+
+.gads-price-list li i,
+.gads-price-list li svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 3 !important;
+    color: #F55E27 !important;
+    flex-shrink: 0 !important;
+}
+
+.featured .gads-price-list li i,
+.featured .gads-price-list li svg {
+    color: #ffffff !important;
+}
+
+.gads-ad-spend {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    font-size: 15px !important;
+    margin-top: 20px !important;
+    opacity: 0.9 !important;
+}
+
+.gads-ad-spend i {
+    width: 18px !important;
+    height: 18px !important;
+    margin-top: 3px !important;
+    flex-shrink: 0 !important;
+}
+
+.gads-btn-outline {
+    display: block !important;
+    width: 100% !important;
+    padding: 18px !important;
+    border: 2px solid #2A1708 !important;
+    border-radius: 40px !important;
+    text-align: center !important;
+    color: #2A1708 !important;
+    font-weight: 800 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.gads-btn-solid {
+    display: block !important;
+    width: 100% !important;
+    padding: 18px !important;
+    background-color: #ffffff !important;
+    color: #F55E27 !important;
+    border-radius: 40px !important;
+    text-align: center !important;
+    font-weight: 800 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+
+@media (max-width: 1100px) {
+    .gads-pricing-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .gads-pricing-card.featured {
+        grid-column: span 2 !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gads-pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gads-pricing-card.featured {
+        grid-column: span 1 !important;
+    }
+
+    .gads-pricing-card {
+        padding: 40px 25px !important;
+    }
+}
+
+/* Why Choose Us Grid Section (Ref 934) */
+.gads-why-grid {
+    padding: 120px 0 !important;
+    background-color: #ffffff !important;
+}
+
+.gads-why-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+}
+
+.gads-why-card {
+    background-color: #FDF9F7 !important;
+    /* Soft warm off-white */
+    border-radius: 30px !important;
+    padding: 35px 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.gads-why-card:hover {
+    transform: translateY(-5px) !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.04) !important;
+}
+
+.gads-why-icon-box {
+    width: 76px !important;
+    height: 76px !important;
+    background-color: #ffffff !important;
+    border-radius: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+    flex-shrink: 0 !important;
+}
+
+.gads-why-icon-box i,
+.gads-why-icon-box svg {
+    color: #F55E27 !important;
+    width: 32px !important;
+    height: 32px !important;
+    stroke-width: 2 !important;
+}
+
+.gads-why-text {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+    color: #2A1708 !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 991px) {
+    .gads-why-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gads-why-grid {
+        padding: 80px 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .gads-why-card {
+        padding: 25px 20px !important;
+        gap: 15px !important;
+    }
+
+    .gads-why-icon-box {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .gads-why-icon-box i,
+    .gads-why-icon-box svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+/* Google Ads Hero Responsive */
+@media (max-width: 991px) {
+    .hero-google-ads {
+        padding: 120px 0 60px !important;
+    }
+
+    .hero-row {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 40px !important;
+    }
+
+    .hero-paragraph {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero-cta-wrapper {
+        justify-content: center !important;
+        display: flex !important;
+    }
+
+    .visual-wrapper {
+        max-width: 400px !important;
+        height: 400px !important;
+        margin: 0 auto !important;
+    }
+
+    .bg-circle-outline,
+    .bg-circle-dec {
+        width: 100% !important;
+        height: 100% !important;
+        bottom: 0 !important;
+        right: 0 !important;
+    }
+
+    .main-hero-img {
+        height: 400px !important;
+        margin-right: 0 !important;
+    }
+
+    .google-rating-badge {
+        top: 20px !important;
+        left: -20px !important;
+    }
+
+    .client-review-summary {
+        bottom: 20px !important;
+        left: -20px !important;
+    }
+
+    .icons-cluster {
+        display: none !important;
     }
 }

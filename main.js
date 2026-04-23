@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize elements that depend on injected HTML
         initializeMenu();
         if (window.lucide) {
-            lucide.createIcons();
+            setTimeout(() => {
+                lucide.createIcons();
+            }, 100);
         }
         highlightActiveLink();
     };
