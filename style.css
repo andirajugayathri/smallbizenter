@@ -5,7 +5,7 @@
     --v2-bg-pure: #FFFFFF;
     --v2-bg-soft: #FFF7F4;
     --v2-bg-glass: rgba(255, 255, 255, 0.7);
-    --v2-text-dark: #2A1708;
+    --v2-text-dark: #100602;
     --v2-text-muted: #100602;
     --v2-border: #FFDED4;
     --v2-gradient-text: linear-gradient(135deg, var(--v2-primary), #FF9E64);
@@ -148,9 +148,9 @@ p {
     margin-right: auto;
 }
 
-.mb-3 {
+/* .mb-3 {
     margin-bottom: 1rem;
-}
+} */
 
 .mt-5 {
     margin-top: 3rem;
@@ -4002,6 +4002,7 @@ p {
 
 .btn-primary-v2 {
     background: var(--v2-gradient-text);
+    background: linear-gradient(101.27deg, #FF6B35 0%, #FF9E64 100%);
     color: white;
     padding: 10px 20px;
     border-radius: 100px;
@@ -5104,9 +5105,8 @@ input[type="datetime-local"]:valid:before {
 
 /* Google Ads Hero Section Styles */
 .hero-google-ads {
-    padding: 160px 0 100px;
-    background-color: #FDF2F0;
-    /* Soft peach/beige background */
+    padding: 100px 0 60px;
+    background: linear-gradient(180deg, rgba(249, 74, 41, 0.15) 0%, rgba(249, 74, 41, 0.025) 100%);
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -5120,15 +5120,15 @@ input[type="datetime-local"]:valid:before {
 .hero-row {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 0;
 }
 
 .hero-left {
-    flex: 1;
+    flex: 1.4;
 }
 
 .hero-right {
-    flex: 1.2;
+    flex: 1;
     display: flex;
     justify-content: center;
     position: relative;
@@ -5136,21 +5136,20 @@ input[type="datetime-local"]:valid:before {
 
 .badge-google-ads {
     display: inline-block;
-    background: #F55E27;
+    background: linear-gradient(90deg, #F94A29 0%, rgba(249, 74, 41, 0.2) 100%);
     color: #ffffff;
     padding: 10px 20px;
-    border-radius: 4px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 30px;
 }
 
 .hero-heading {
-    font-size: clamp(40px, 5.5vw, 68px);
+    font-size: 60px;
     line-height: 1.1;
-    color: #2A1708;
+    color: #100602;
     margin-bottom: 24px;
     font-weight: 800;
     letter-spacing: -1.5px;
@@ -5158,13 +5157,12 @@ input[type="datetime-local"]:valid:before {
 
 .hero-paragraph {
     font-size: 20px;
-    color: #4A3C34;
-    max-width: 500px;
+    color: #100602CC;
+    font-weight: 400;
     margin-bottom: 40px;
     line-height: 1.6;
 }
 
-/* Portal Frame Strategy */
 .portal-frame {
     position: relative;
     width: 600px;
@@ -5172,57 +5170,66 @@ input[type="datetime-local"]:valid:before {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
-.portal-img-container {
+.portal-frame::before {
+    content: '';
     position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    overflow: hidden;
+    top: 50%;
+    left: 0;
+    /* width: 50%;
+    height: 110%; */
+    background: #FDF2F0;
     z-index: 5;
-    background: #F55E27; /* The portal background circle */
-}
-
-.portal-img-container .main-hero-img {
-    height: 120%; /* Large occupy scale */
-    width: auto;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    object-fit: contain;
-}
-
-.portal-img-popout {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    z-index: 15;
+    transform: translateY(-50%);
     pointer-events: none;
 }
 
+
+
+.portal-img-popout {
+    position: absolute;
+    width: 520px;
+    /* Synchronized with .portal-img-container */
+    height: 520px;
+    z-index: 15;
+    pointer-events: none;
+    overflow: visible;
+    /* Allow laptop/head to stick out */
+}
+
 .portal-img-popout .main-hero-img {
-    height: 120%; /* EXACT same scale */
+    height: 108%;
+    /* EXACT same scale as background copy */
     width: auto;
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* Clip path to only show the part that sticks out above the circle */
-    clip-path: inset(-500px -500px 300px -500px); 
-    /* Offset by the waistline to show only head/hands */
+    /* Clip everything below the laptop base */
+    clip-path: inset(-500px -500px 240px -500px);
     object-fit: contain;
 }
 
 .bg-circle-dec {
-    display: none; /* Replaced by portal-img-container background */
+    position: absolute;
+    width: 411px;
+    height: 431px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    display: block;
+    z-index: -1;
+    pointer-events: none;
+    top: 60%;
+    left: 63%;
+    transform: translate(-50%, -50%);
 }
 
 .google-rating-badge {
     position: absolute;
-    top: 180px;
-    left: 20px;
+    top: 100px;
+    left: 100px;
     z-index: 20;
     background: #ffffff;
     padding: 14px 20px;
@@ -5237,8 +5244,8 @@ input[type="datetime-local"]:valid:before {
 
 .client-review-summary {
     position: absolute;
-    bottom: 60px;
-    left: -40px;
+    bottom: 100px;
+    left: -100px;
     z-index: 20;
     background: #ffffff;
     padding: 12px 24px;
@@ -5276,7 +5283,7 @@ input[type="datetime-local"]:valid:before {
 .client-label {
     font-size: 13px;
     font-weight: 700;
-    color: #2A1708;
+    color: #100602;
     white-space: nowrap;
 }
 
@@ -5298,7 +5305,7 @@ input[type="datetime-local"]:valid:before {
 
 .badge-title {
     font-weight: 700;
-    color: #2A1708;
+    color: #100602;
     font-size: 14px;
     margin-bottom: 2px;
     display: block;
@@ -5308,17 +5315,15 @@ input[type="datetime-local"]:valid:before {
 /* Icons Cluster */
 .icons-cluster {
     position: absolute;
-    top: 90px;
-    right: -100px;
+    top: 100px;
+    right: -60px;
     z-index: 10;
-    width: 320px;
     animation: float-v2 5s ease-in-out infinite alternate;
 }
 
 .icons-img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
 }
 
 /* Section Below Hero */
@@ -5330,12 +5335,13 @@ input[type="datetime-local"]:valid:before {
     font-size: clamp(32px, 4.5vw, 48px);
     line-height: 1.25;
     font-weight: 800;
-    color: #2A1708;
+    color: #100602;
+    margin-bottom: 24px;
     letter-spacing: -0.5px;
 }
 
 .text-muted-v2 {
-    color: #4A3C34;
+    color: #100602CC;
     line-height: 1.8;
     font-size: 18px;
 }
@@ -5359,23 +5365,26 @@ input[type="datetime-local"]:valid:before {
 }
 
 .color-dark {
-    color: #2A1708;
+    color: #100602;
 }
 
 /* ==========================================================================
    GOOGLE ADS LANDING PAGE - UNIQUE STYLES (Ref 593)
    ========================================================================== */
+.approach-padding {
+    padding: 60px 0;
+}
 
 /* Why Google Ads Section */
 .gads-why {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #FDF9F7 !important;
 }
 
 .gads-dual-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 80px !important;
+    gap: 0px !important;
     align-items: center !important;
 }
 
@@ -5392,6 +5401,7 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-checklist {
+    margin: 30px 0;
     list-style: none !important;
     padding: 0 !important;
     display: flex !important;
@@ -5404,7 +5414,7 @@ input[type="datetime-local"]:valid:before {
     align-items: flex-start !important;
     gap: 15px !important;
     font-size: 17px !important;
-    color: #4A3C34 !important;
+    color: #100602CC !important;
     font-weight: 500 !important;
 }
 
@@ -5426,8 +5436,9 @@ input[type="datetime-local"]:valid:before {
     }
 
     .gads-checklist li {
-        justify-content: center !important;
+        justify-content: left !important;
         text-align: left !important;
+        padding: 0 20px;
     }
 
     .gads-why {
@@ -5437,7 +5448,7 @@ input[type="datetime-local"]:valid:before {
 
 /* Our Google Ads Services Section */
 .gads-services {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #ffffff !important;
 }
 
@@ -5462,7 +5473,7 @@ input[type="datetime-local"]:valid:before {
     border: 1.5px solid #F3F4F6 !important;
     border-radius: 14px !important;
     font-weight: 700 !important;
-    color: #F55E27 !important;
+    color: #FF6B35 !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     font-size: 16px !important;
@@ -5480,10 +5491,9 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-tab-btn.active {
-    background: #F55E27 !important;
-    border-color: #F55E27 !important;
+    background: #FF6B35 !important;
+    border-color: #FF6B35 !important;
     color: #ffffff !important;
-    box-shadow: 0 15px 30px rgba(245, 94, 39, 0.2) !important;
 }
 
 .gads-tabs-container {
@@ -5510,11 +5520,17 @@ input[type="datetime-local"]:valid:before {
     margin-top: 20px !important;
 }
 
+.gads-tab-card h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
 .gads-benefits-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     column-gap: 100px !important;
-    row-gap: 30px !important;
+    row-gap: 15px !important;
     margin-top: 40px !important;
 }
 
@@ -5524,6 +5540,10 @@ input[type="datetime-local"]:valid:before {
     gap: 15px !important;
     color: #333333 !important;
     font-size: 18px !important;
+}
+
+.youtub-para {
+    margin-top: 20px;
 }
 
 .gads-benefit-item svg {
@@ -5574,7 +5594,7 @@ input[type="datetime-local"]:valid:before {
 
 /* What Makes Us Different Section (Step Id 647) */
 .gads-features {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #ffffff !important;
 }
 
@@ -5587,20 +5607,24 @@ input[type="datetime-local"]:valid:before {
 
 .gads-feature-card {
     background: #ffffff !important;
-    border: 1.5px solid #F3F4F6 !important;
+    border: 1px solid #FFDED4;
     border-radius: 40px !important;
-    padding: 50px !important;
-    box-shadow: 0 50px 120px rgba(0, 0, 0, 0.03) !important;
+    padding: 30px !important;
+    box-shadow: 0px 4px 6px -2px #0000000D;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
 }
 
-.gads-feature-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 60px 140px rgba(245, 94, 39, 0.08) !important;
-    border-color: rgba(245, 94, 39, 0.1) !important;
+.gads-feature-card h3 {
+    margin-bottom: 30px !important;
+    font-size: 24px !important;
+}
+
+.gads-feature-card p {
+    font-size: 17px !important;
+    color: #100602 !important;
 }
 
 .gads-feature-icon {
@@ -5632,7 +5656,7 @@ input[type="datetime-local"]:valid:before {
     position: relative !important;
     padding-left: 20px !important;
     margin-bottom: 10px !important;
-    color: #4A3C34 !important;
+    color: #100602CC !important;
     font-weight: 500 !important;
     font-size: 16px !important;
     line-height: 1.5 !important;
@@ -5687,17 +5711,17 @@ input[type="datetime-local"]:valid:before {
 .gads-section-header p {
     font-size: 18px !important;
     line-height: 1.8 !important;
-    max-width: 850px !important;
+    max-width: 1000px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
-    color: #6B7280 !important;
+    color: #100602 !important;
     /* Soft grey */
 }
 
 /* Benefits of Hiring an Agency Section (Ref 811) */
 .gads-benefits {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #ffffff !important;
 }
 
@@ -5710,6 +5734,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-benefits-check-grid {
     display: grid !important;
+    margin: 30px 0 !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 20px 30px !important;
 }
@@ -5718,7 +5743,7 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
-    color: #4A3C34 !important;
+    color: #100602CC !important;
     font-weight: 600 !important;
     font-size: 16px !important;
 }
@@ -5762,7 +5787,7 @@ input[type="datetime-local"]:valid:before {
     .gads-benefits-check-grid {
         text-align: left !important;
         max-width: 500px !important;
-        margin: 0 auto 30px !important;
+        margin: 30px auto 30px !important;
     }
 }
 
@@ -5774,7 +5799,7 @@ input[type="datetime-local"]:valid:before {
 
 /* Our Google Ads Process Section (Ref 816) */
 .gads-process {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #FDF9F7 !important;
 }
 
@@ -5787,7 +5812,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-process-card {
     background: #ffffff !important;
-    border: 1.5px solid #F3F4F6 !important;
+    border: 1px solid #FFDED4;
     border-radius: 40px !important;
     padding: 30px !important;
     box-shadow: 0 50px 120px rgba(0, 0, 0, 0.03) !important;
@@ -5795,15 +5820,9 @@ input[type="datetime-local"]:valid:before {
     position: relative !important;
 }
 
-.gads-process-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 60px 140px rgba(245, 94, 39, 0.08) !important;
-    border-color: rgba(245, 94, 39, 0.1) !important;
-}
-
 .gads-step-badge {
-    width: 44px !important;
-    height: 44px !important;
+    width: 40px !important;
+    height: 40px !important;
     background-color: #F55E27 !important;
     color: #ffffff !important;
     border-radius: 50% !important;
@@ -5813,6 +5832,16 @@ input[type="datetime-local"]:valid:before {
     font-weight: 800 !important;
     font-size: 18px !important;
     margin-bottom: 25px !important;
+}
+
+.gads-process-card h3 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+}
+
+.gads-process-card p {
+    font-size: 18px !important;
+    color: #100602 !important;
 }
 
 @media (max-width: 1100px) {
@@ -5837,7 +5866,7 @@ input[type="datetime-local"]:valid:before {
 
 /* Industries We Work With Section (Ref 743) */
 .gads-industries {
-    padding: 120px 0 !important;
+    padding: 0 !important;
     background-color: #ffffff !important;
 }
 
@@ -5851,26 +5880,31 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-industry-card {
-    background-color: #FDF9F7 !important;
-    /* Soft warm off-white */
+    background: #F94A290D !important;
     border-radius: 20px !important;
-    padding: 30px 20px !important;
-    width: calc(14.28% - 15px) !important;
-    /* Support 7 items in a row */
-    min-width: 140px !important;
+    padding: 30px 40px !important;
+    width: auto !important;
+    min-width: 200px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 15px !important;
     text-align: center !important;
     transition: all 0.3s ease !important;
+    flex-shrink: 0 !important;
 }
 
-.gads-industry-card:hover {
-    transform: translateY(-5px) !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05) !important;
+.gads-industry-track {
+    animation: scroll-left 20s linear infinite !important;
+    display: flex !important;
+    gap: 20px !important;
+    width: max-content !important;
 }
+
+.gads-ticker-fast:hover .gads-industry-track {
+    animation-play-state: paused !important;
+}
+
 
 .gads-industry-icon {
     color: #F55E27 !important;
@@ -5880,37 +5914,46 @@ input[type="datetime-local"]:valid:before {
 
 .gads-industry-icon i,
 .gads-industry-icon svg {
-    width: 100% !important;
-    height: 100% !important;
+    width: 40px !important;
+    height: 40px !important;
     stroke-width: 2 !important;
 }
 
 .gads-industry-name {
-    font-weight: 700 !important;
-    color: #2A1708 !important;
-    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #100602 !important;
+    font-size: 18px !important;
     line-height: 1.3 !important;
 }
 
 @media (max-width: 1100px) {
     .gads-industry-card {
-        width: calc(33.33% - 15px) !important;
+        padding: 20px 30px !important;
+        min-width: 180px !important;
     }
 }
 
 @media (max-width: 768px) {
     .gads-industry-card {
-        width: calc(50% - 15px) !important;
+        padding: 15px 25px !important;
+        min-width: 160px !important;
+        gap: 10px !important;
     }
 
-    .gads-industries {
-        padding: 80px 0 !important;
+    .gads-industry-name {
+        font-size: 15px !important;
+    }
+
+    .gads-industry-icon i,
+    .gads-industry-icon svg {
+        width: 32px !important;
+        height: 32px !important;
     }
 }
 
 /* Management Packages Section (Ref 859) */
 .gads-pricing {
-    padding: 120px 0 !important;
+    padding-bottom: 60px !important;
     background-color: #ffffff !important;
 }
 
@@ -5930,27 +5973,30 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     flex-direction: column !important;
     gap: 30px !important;
+    height: 850px;
     transition: all 0.4s ease !important;
     border: 1.5px solid #F3F4F6 !important;
+    box-shadow: 0px 25px 50px -12px #00000040;
+
 }
 
 .gads-pricing-card.featured {
-    background-color: #F55E27 !important;
+    background-color: #FF6B35 !important;
     color: #ffffff !important;
     transform: scale(1.05) !important;
-    box-shadow: 0 50px 120px rgba(245, 94, 39, 0.2) !important;
+    box-shadow: 0px 25px 50px -12px #00000040;
     border: none !important;
 }
 
 .gads-package-name {
-    font-size: 22px !important;
+    font-size: 18px !important;
     font-weight: 700 !important;
     margin-bottom: 15px !important;
     color: inherit !important;
 }
 
 .gads-price {
-    font-size: 52px !important;
+    font-size: 42px !important;
     font-weight: 800 !important;
     line-height: 1 !important;
     margin-bottom: 10px !important;
@@ -5960,13 +6006,13 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-currency {
-    font-size: 28px !important;
-    font-weight: 700 !important;
+    font-size: 42px !important;
+    font-weight: 800 !important;
 }
 
 .gads-suffix {
-    font-size: 16px !important;
-    font-weight: 600 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
     opacity: 0.8 !important;
 }
 
@@ -6014,6 +6060,7 @@ input[type="datetime-local"]:valid:before {
     align-items: flex-start !important;
     gap: 10px !important;
     font-size: 15px !important;
+    font-weight: 800;
     margin-top: 20px !important;
     opacity: 0.9 !important;
 }
@@ -6029,10 +6076,10 @@ input[type="datetime-local"]:valid:before {
     display: block !important;
     width: 100% !important;
     padding: 18px !important;
-    border: 2px solid #2A1708 !important;
-    border-radius: 40px !important;
+    border: 2px solid #100602 !important;
+    border-radius: 16px !important;
     text-align: center !important;
-    color: #2A1708 !important;
+    color: #100602 !important;
     font-weight: 800 !important;
     transition: all 0.3s ease !important;
     text-decoration: none !important;
@@ -6044,7 +6091,7 @@ input[type="datetime-local"]:valid:before {
     padding: 18px !important;
     background-color: #ffffff !important;
     color: #F55E27 !important;
-    border-radius: 40px !important;
+    border-radius: 16px !important;
     text-align: center !important;
     font-weight: 800 !important;
     transition: all 0.3s ease !important;
@@ -6075,11 +6122,15 @@ input[type="datetime-local"]:valid:before {
     .gads-pricing-card {
         padding: 40px 25px !important;
     }
+
+    .gads-pricing-card {
+        height: auto;
+    }
 }
 
 /* Why Choose Us Grid Section (Ref 934) */
 .gads-why-grid {
-    padding: 120px 0 !important;
+    padding: 60px 0 !important;
     background-color: #ffffff !important;
 }
 
@@ -6091,9 +6142,8 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-why-card {
-    background-color: #FDF9F7 !important;
-    /* Soft warm off-white */
-    border-radius: 30px !important;
+    background-color: #FFF7F4 !important;
+    border-radius: 8px !important;
     padding: 35px 30px !important;
     display: flex !important;
     align-items: center !important;
@@ -6101,37 +6151,45 @@ input[type="datetime-local"]:valid:before {
     transition: all 0.3s ease !important;
 }
 
-.gads-why-card:hover {
-    transform: translateY(-5px) !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.04) !important;
-}
-
 .gads-why-icon-box {
-    width: 76px !important;
-    height: 76px !important;
+    width: 48px !important;
+    height: 48px !important;
     background-color: #ffffff !important;
-    border-radius: 18px !important;
+    border-radius: 6px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0px 4px 12px 0px #0000000D;
     flex-shrink: 0 !important;
 }
 
 .gads-why-icon-box i,
 .gads-why-icon-box svg {
     color: #F55E27 !important;
-    width: 32px !important;
-    height: 32px !important;
+    width: 20px !important;
+    height: 20px !important;
     stroke-width: 2 !important;
 }
 
 .gads-why-text {
-    font-size: 17px !important;
+    font-size: 18px !important;
     line-height: 1.6 !important;
-    color: #2A1708 !important;
+    color: #100602 !important;
     font-weight: 500 !important;
+}
+
+.tiny-stars svg,
+.star-rating svg {
+    width: 10px;
+    height: 10px;
+}
+
+.google-stars {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #e4e2df;
+    padding: 3px;
 }
 
 @media (max-width: 991px) {
@@ -6163,7 +6221,7 @@ input[type="datetime-local"]:valid:before {
 }
 
 /* Google Ads Hero Responsive */
-@media (max-width: 991px) {
+@media (max-width: 768px) {
     .hero-google-ads {
         padding: 120px 0 60px !important;
     }
@@ -6205,15 +6263,37 @@ input[type="datetime-local"]:valid:before {
 
     .google-rating-badge {
         top: 20px !important;
-        left: -20px !important;
+        left: 20px !important;
     }
 
     .client-review-summary {
-        bottom: 20px !important;
-        left: -20px !important;
+        bottom: 0px !important;
+        left: 20px !important;
     }
 
     .icons-cluster {
         display: none !important;
     }
+
+    .portal-frame {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-circle-dec {
+        display: none;
+    }
+}
+
+/* Testimonial Stars Fill (Hero & Testimonials) */
+.tp-stars i,
+.tp-stars svg,
+.star-rating i,
+.star-rating svg,
+.tiny-stars i,
+.tiny-stars svg {
+    fill: #FFB800 !important;
+    color: #FFB800 !important;
+    width: 10px !important;
+    height: 10px !important;
 }
