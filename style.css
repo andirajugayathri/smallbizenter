@@ -1623,7 +1623,7 @@ p {
 .tp-content {
     flex-grow: 1;
     position: relative;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     border-bottom: 1px solid var(--v2-border);
     margin-bottom: 30px;
 }
@@ -5470,7 +5470,7 @@ input[type="datetime-local"]:valid:before {
     gap: 10px !important;
     padding: 16px 32px !important;
     background: #ffffff !important;
-    border: 1.5px solid #F3F4F6 !important;
+    border: 1px solid #E0E0E0;
     border-radius: 14px !important;
     font-weight: 700 !important;
     color: #FF6B35 !important;
@@ -5480,9 +5480,10 @@ input[type="datetime-local"]:valid:before {
     box-shadow: none !important;
 }
 
-.gads-tab-btn i {
-    width: 20px !important;
-    height: 20px !important;
+.gads-tab-btn img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain !important;
 }
 
 .gads-tab-btn:hover {
@@ -5494,6 +5495,10 @@ input[type="datetime-local"]:valid:before {
     background: #FF6B35 !important;
     border-color: #FF6B35 !important;
     color: #ffffff !important;
+}
+
+.gads-tab-btn.active img {
+    filter: brightness(0) invert(1) !important;
 }
 
 .gads-tabs-container {
