@@ -281,6 +281,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // 10. Industries Slider Logic
+    const initIndustriesSlider = () => {
+        const sliderContainer = document.getElementById('industry-slider-container');
+        const prevBtn = document.getElementById('industry-prev');
+        const nextBtn = document.getElementById('industry-next');
+
+        if (!sliderContainer || !prevBtn || !nextBtn) return;
+
+        const scrollAmount = 300; // Adjust based on card width + gap
+
+        const scrollNext = () => {
+            const maxScroll = sliderContainer.scrollWidth - sliderContainer.clientWidth;
+            if (sliderContainer.scrollLeft >= maxScroll - 5) {
+                sliderContainer.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                sliderContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        const scrollPrev = () => {
+            sliderContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        };
+
+        let autoPlayInterval = setInterval(scrollNext, 2000);
+
+        const resetAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(scrollNext, 2000);
+        };
+
+        nextBtn.addEventListener('click', () => {
+            scrollNext();
+            resetAutoPlay();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            scrollPrev();
+            resetAutoPlay();
+        });
+
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        sliderContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(scrollNext, 5000);
+        });
+
+        // Optional: Hide arrows if at start or end
+        const toggleArrows = () => {
+            const scrollLeft = sliderContainer.scrollLeft;
+            const maxScroll = sliderContainer.scrollWidth - sliderContainer.clientWidth;
+
+            prevBtn.style.opacity = scrollLeft <= 0 ? '0.3' : '1';
+            prevBtn.style.pointerEvents = scrollLeft <= 0 ? 'none' : 'auto';
+
+            nextBtn.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
+            nextBtn.style.pointerEvents = scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+        };
+
+        sliderContainer.addEventListener('scroll', toggleArrows);
+        window.addEventListener('resize', toggleArrows);
+
+        // Initial check
+        setTimeout(toggleArrows, 100);
+    };
+
     // Initialize all modules
     try {
         if (window.lucide) lucide.createIcons();
@@ -291,6 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initTimeline();
         initCarousel();
         initForms();
+        initIndustriesSlider();
     } catch (e) {
         console.error('Initialization error:', e);
     }

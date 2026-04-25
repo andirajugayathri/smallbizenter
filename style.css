@@ -5384,7 +5384,7 @@ input[type="datetime-local"]:valid:before {
 .gads-dual-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 0px !important;
+    gap: 30px !important;
     align-items: center !important;
 }
 
@@ -5454,7 +5454,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-tabs-nav-wrapper {
     margin: 40px 0 !important;
-    padding: 0 15px !important;
+    /* padding: 0 15px !important; */
 }
 
 .gads-tabs-nav {
@@ -5468,7 +5468,7 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
-    padding: 16px 32px !important;
+    padding: 16px 15px !important;
     background: #ffffff !important;
     border: 1px solid #E0E0E0;
     border-radius: 14px !important;
@@ -5481,9 +5481,10 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-tab-btn img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 16px !important;
+    height: 16px !important;
     object-fit: contain !important;
+    filter: invert(48%) sepia(87%) saturate(2465%) hue-rotate(345deg) brightness(97%) contrast(92%) !important;
 }
 
 .gads-tab-btn:hover {
@@ -5739,7 +5740,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-benefits-check-grid {
     display: grid !important;
-    margin: 30px 0 !important;
+    margin: 20px 0 !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 20px 30px !important;
 }
@@ -5871,50 +5872,102 @@ input[type="datetime-local"]:valid:before {
 
 /* Industries We Work With Section (Ref 743) */
 .gads-industries {
-    padding: 0 !important;
+    padding: 60px 0 !important;
     background-color: #ffffff !important;
 }
 
-.gads-industries-grid {
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 15px !important;
+.gads-industries-slider-wrapper {
+    position: relative !important;
     max-width: 1200px !important;
     margin: 40px auto 0 !important;
+    padding: 0 60px !important;
+}
+
+.gads-slider-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 45px !important;
+    height: 45px !important;
+    background: #ffffff !important;
+    border: 1px solid #FFDED4 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #F55E27 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.gads-slider-btn:hover {
+    background-color: #F55E27 !important;
+    color: #ffffff !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.gads-slider-btn.prev {
+    left: 0 !important;
+}
+
+.gads-slider-btn.next {
+    right: 0 !important;
+}
+
+.gads-slider-btn i,
+.gads-slider-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 3 !important;
+}
+
+#industry-slider-container {
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE 10+ */
+    scroll-behavior: smooth !important;
+    padding: 20px 0 !important;
+}
+
+#industry-slider-container::-webkit-scrollbar {
+    display: none !important;
+    /* Chrome/Safari */
+}
+
+.gads-industry-track {
+    /* Removed animation for manual control */
+    display: flex !important;
+    gap: 20px !important;
+    width: max-content !important;
 }
 
 .gads-industry-card {
     background: #F94A290D !important;
     border-radius: 20px !important;
-    padding: 30px 40px !important;
-    width: auto !important;
-    min-width: 200px !important;
+    width: 260px !important;
+    height: 130px !important;
+    padding: 10px;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
     gap: 15px !important;
     text-align: center !important;
     transition: all 0.3s ease !important;
     flex-shrink: 0 !important;
 }
 
-.gads-industry-track {
-    animation: scroll-left 20s linear infinite !important;
-    display: flex !important;
-    gap: 20px !important;
-    width: max-content !important;
-}
-
-.gads-ticker-fast:hover .gads-industry-track {
-    animation-play-state: paused !important;
-}
 
 
 .gads-industry-icon {
     color: #F55E27 !important;
     width: 42px !important;
     height: 42px !important;
+    transition: color 0.3s ease !important;
 }
 
 .gads-industry-icon i,
@@ -5929,30 +5982,26 @@ input[type="datetime-local"]:valid:before {
     color: #100602 !important;
     font-size: 18px !important;
     line-height: 1.3 !important;
-}
-
-@media (max-width: 1100px) {
-    .gads-industry-card {
-        padding: 20px 30px !important;
-        min-width: 180px !important;
-    }
+    transition: color 0.3s ease !important;
 }
 
 @media (max-width: 768px) {
+    .gads-industries-slider-wrapper {
+        padding: 0 40px !important;
+    }
+
+    .gads-slider-btn {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
     .gads-industry-card {
-        padding: 15px 25px !important;
-        min-width: 160px !important;
-        gap: 10px !important;
+        width: 180px !important;
+        padding: 20px !important;
     }
 
     .gads-industry-name {
         font-size: 15px !important;
-    }
-
-    .gads-industry-icon i,
-    .gads-industry-icon svg {
-        width: 32px !important;
-        height: 32px !important;
     }
 }
 
