@@ -447,7 +447,7 @@ p {
     font-family: var(--v2-font-display);
     font-size: 24px;
     color: var(--v2-text-dark);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .metric span {
@@ -610,7 +610,7 @@ p {
 
 .card-value {
     font-family: var(--v2-font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 18px;
     color: var(--v2-text-dark);
 }
@@ -982,7 +982,7 @@ p {
 
 .cta-content-inner p {
     font-size: 20px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     color: var(--v2-text-muted);
 }
 
@@ -1277,6 +1277,7 @@ p {
 .clients-v2 h2 {
     font-size: 48px;
     max-width: 700px;
+    /* line-height: 57px; */
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -1295,7 +1296,7 @@ p {
     padding: 15px 30px;
     background: var(--v2-bg-soft);
     border-radius: 8px;
-    font-weight: 800;
+    font-weight: 700;
     font-family: var(--v2-font-display);
     font-size: 20px;
     color: var(--v2-text-muted);
@@ -1446,7 +1447,7 @@ p {
     font-size: 36px;
     line-height: 1;
     font-family: var(--v2-font-display);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .exp-badge span {
@@ -1837,6 +1838,7 @@ p {
 
 .footer-links-col ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .footer-bottom-v2 p {
@@ -2593,7 +2595,7 @@ p {
     font-size: 4.8rem;
     line-height: 1.1;
     margin: 20px 0 30px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .hero-quote-v2 {
@@ -2813,7 +2815,7 @@ p {
 .overlay-val {
     display: block;
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--v2-text-dark);
 }
 
@@ -3140,7 +3142,7 @@ p {
     background: var(--v2-primary);
     color: white;
     border-radius: 50px;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 0.9rem;
     margin-bottom: 12px;
 }
@@ -3355,7 +3357,7 @@ p {
 
 .prism-year {
     font-family: var(--v2-font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 0.85rem;
     color: inherit;
     z-index: 2;
@@ -3825,7 +3827,7 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .bg-warm .eyebrow-v2 {
@@ -4598,8 +4600,8 @@ i[data-lucide] {
 
     svg.lucide,
     i[data-lucide] {
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 30px;
     }
 
     .services-section-alt {
@@ -5105,7 +5107,7 @@ input[type="datetime-local"]:valid:before {
 
 /* Google Ads Hero Section Styles */
 .hero-google-ads {
-    padding: 100px 0 60px;
+    padding: 120px 0 30px;
     background: linear-gradient(180deg, rgba(249, 74, 41, 0.15) 0%, rgba(249, 74, 41, 0.025) 100%);
     overflow: hidden;
     position: relative;
@@ -5138,26 +5140,26 @@ input[type="datetime-local"]:valid:before {
     display: inline-block;
     background: linear-gradient(90deg, #F94A29 0%, rgba(249, 74, 41, 0.2) 100%);
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     margin-bottom: 30px;
 }
 
 .hero-heading {
     font-size: 60px;
-    line-height: 1.1;
+    /* line-height: 79.2px; */
     color: #100602;
     margin-bottom: 24px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -1.5px;
 }
 
 .hero-paragraph {
     font-size: 20px;
-    color: #100602CC;
+    color: rgba(16, 6, 2, 0.8);
     font-weight: 400;
     margin-bottom: 40px;
     line-height: 1.6;
@@ -5333,16 +5335,15 @@ input[type="datetime-local"]:valid:before {
 
 .fs-clamp-hl {
     font-size: clamp(32px, 4.5vw, 48px);
-    line-height: 1.25;
-    font-weight: 800;
+    /* line-height: 46px; */
+    letter-spacing: -0.72px;
+    font-weight: 700;
     color: #100602;
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
 }
 
 .text-muted-v2 {
-    color: #100602CC;
-    line-height: 1.8;
+    color: #100602;
+    /* line-height: 1.8; */
     font-size: 18px;
 }
 
@@ -5413,8 +5414,8 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     align-items: flex-start !important;
     gap: 15px !important;
-    font-size: 17px !important;
-    color: #100602CC !important;
+    font-size: 15px !important;
+    color: #100602 !important;
     font-weight: 500 !important;
 }
 
@@ -5440,10 +5441,6 @@ input[type="datetime-local"]:valid:before {
         text-align: left !important;
         padding: 0 20px;
     }
-
-    .gads-why {
-        padding: 80px 0 !important;
-    }
 }
 
 /* Our Google Ads Services Section */
@@ -5460,23 +5457,23 @@ input[type="datetime-local"]:valid:before {
 .gads-tabs-nav {
     display: flex !important;
     justify-content: center !important;
-    gap: 15px !important;
+    gap: 12px !important;
     flex-wrap: wrap !important;
 }
 
 .gads-tab-btn {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    padding: 16px 15px !important;
+    gap: 5px !important;
+    padding: 10px 15px !important;
     background: #ffffff !important;
     border: 1px solid #E0E0E0;
-    border-radius: 14px !important;
-    font-weight: 700 !important;
+    border-radius: 8px !important;
+    font-weight: 400 !important;
     color: #FF6B35 !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     box-shadow: none !important;
 }
 
@@ -5502,10 +5499,11 @@ input[type="datetime-local"]:valid:before {
     filter: brightness(0) invert(1) !important;
 }
 
+/* 
 .gads-tabs-container {
     max-width: 1000px !important;
-    margin: 0 auto !important;
-}
+    margin: 0 40px !important;
+} */
 
 .gads-tab-pane {
     display: none !important;
@@ -5518,7 +5516,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-tab-card {
     background: #ffffff !important;
-    padding: 70px !important;
+    padding: 50px !important;
     border-radius: 40px !important;
     text-align: left !important;
     box-shadow: 0 50px 120px rgba(0, 0, 0, 0.04) !important;
@@ -5537,7 +5535,7 @@ input[type="datetime-local"]:valid:before {
     grid-template-columns: 1fr 1fr !important;
     column-gap: 100px !important;
     row-gap: 15px !important;
-    margin-top: 40px !important;
+    margin-top: 30px !important;
 }
 
 .gads-benefit-item {
@@ -5615,7 +5613,7 @@ input[type="datetime-local"]:valid:before {
     background: #ffffff !important;
     border: 1px solid #FFDED4;
     border-radius: 40px !important;
-    padding: 30px !important;
+    padding: 30px 25px 0 !important;
     box-shadow: 0px 4px 6px -2px #0000000D;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     height: 100% !important;
@@ -5624,13 +5622,14 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-feature-card h3 {
-    margin-bottom: 30px !important;
+    margin-bottom: 15px !important;
     font-size: 24px !important;
 }
 
 .gads-feature-card p {
     font-size: 17px !important;
     color: #100602 !important;
+    line-height: 1.8 !important;
 }
 
 .gads-feature-icon {
@@ -5642,7 +5641,7 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-bottom: 35px !important;
+    margin-bottom: 20px !important;
 }
 
 .gads-feature-icon i,
@@ -5675,7 +5674,7 @@ input[type="datetime-local"]:valid:before {
     top: 9px !important;
     width: 5px !important;
     height: 5px !important;
-    background-color: #F55E27 !important;
+    background-color: #000 !important;
     border-radius: 50% !important;
     /* Round dots (Ref 755) */
 }
@@ -5696,7 +5695,7 @@ input[type="datetime-local"]:valid:before {
     }
 
     .gads-features {
-        padding: 80px 0 !important;
+        padding: 60px 0 !important;
     }
 }
 
@@ -5708,7 +5707,7 @@ input[type="datetime-local"]:valid:before {
 .gads-section-header h2 {
     font-size: clamp(32px, 5vw, 48px) !important;
     line-height: 1.2 !important;
-    max-width: 900px !important;
+    max-width: 800px;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
@@ -5717,7 +5716,6 @@ input[type="datetime-local"]:valid:before {
 .gads-section-header p {
     font-size: 18px !important;
     line-height: 1.8 !important;
-    max-width: 1000px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
@@ -5728,7 +5726,7 @@ input[type="datetime-local"]:valid:before {
 /* Benefits of Hiring an Agency Section (Ref 811) */
 .gads-benefits {
     padding: 60px 0 !important;
-    background-color: #ffffff !important;
+    background: #E1E1E133;
 }
 
 .gads-benefits-row {
@@ -5805,8 +5803,7 @@ input[type="datetime-local"]:valid:before {
 
 /* Our Google Ads Process Section (Ref 816) */
 .gads-process {
-    padding: 60px 0 !important;
-    background-color: #FDF9F7 !important;
+    padding-top: 60px !important;
 }
 
 .gads-process-grid {
@@ -5841,7 +5838,7 @@ input[type="datetime-local"]:valid:before {
 }
 
 .gads-process-card h3 {
-    font-size: 24px !important;
+    font-size: 22px !important;
     margin-bottom: 20px !important;
 }
 
@@ -5865,21 +5862,18 @@ input[type="datetime-local"]:valid:before {
         padding: 40px 25px !important;
     }
 
-    .gads-process {
-        padding: 80px 0 !important;
-    }
 }
 
 /* Industries We Work With Section (Ref 743) */
 .gads-industries {
-    padding: 60px 0 !important;
+    padding-bottom: 60px !important;
     background-color: #ffffff !important;
 }
 
 .gads-industries-slider-wrapper {
     position: relative !important;
-    max-width: 1200px !important;
-    margin: 40px auto 0 !important;
+    max-width: 1230px !important;
+    margin: 10px auto 0 !important;
     padding: 0 60px !important;
 }
 
@@ -5926,11 +5920,10 @@ input[type="datetime-local"]:valid:before {
 #industry-slider-container {
     overflow-x: auto !important;
     scrollbar-width: none !important;
-    /* Firefox */
     -ms-overflow-style: none !important;
-    /* IE 10+ */
     scroll-behavior: smooth !important;
     padding: 20px 0 !important;
+    scroll-snap-type: x mandatory !important;
 }
 
 #industry-slider-container::-webkit-scrollbar {
@@ -5959,6 +5952,7 @@ input[type="datetime-local"]:valid:before {
     text-align: center !important;
     transition: all 0.3s ease !important;
     flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
 }
 
 
@@ -5996,7 +5990,7 @@ input[type="datetime-local"]:valid:before {
     }
 
     .gads-industry-card {
-        width: 180px !important;
+        width: calc(100vw - 120px) !important;
         padding: 20px !important;
     }
 
@@ -6027,7 +6021,6 @@ input[type="datetime-local"]:valid:before {
     display: flex !important;
     flex-direction: column !important;
     gap: 30px !important;
-    height: 850px;
     transition: all 0.4s ease !important;
     border: 1.5px solid #F3F4F6 !important;
     box-shadow: 0px 25px 50px -12px #00000040;
@@ -6038,7 +6031,7 @@ input[type="datetime-local"]:valid:before {
     background-color: #FF6B35 !important;
     color: #ffffff !important;
     transform: scale(1.05) !important;
-    box-shadow: 0px 25px 50px -12px #00000040;
+    box-shadow: 0px 25px 50px -12px #00000040 !important;
     border: none !important;
 }
 
@@ -6114,7 +6107,7 @@ input[type="datetime-local"]:valid:before {
     align-items: flex-start !important;
     gap: 10px !important;
     font-size: 15px !important;
-    font-weight: 800;
+    font-weight: 700;
     margin-top: 20px !important;
     opacity: 0.9 !important;
 }
@@ -6144,7 +6137,7 @@ input[type="datetime-local"]:valid:before {
     width: 100% !important;
     padding: 18px !important;
     background-color: #ffffff !important;
-    color: #F55E27 !important;
+    color: #000 !important;
     border-radius: 16px !important;
     text-align: center !important;
     font-weight: 800 !important;
@@ -6191,6 +6184,13 @@ input[type="datetime-local"]:valid:before {
 .gads-why-container {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+}
+
+.gads-why-container-fbs {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 30px !important;
     margin-top: 50px !important;
 }
@@ -6251,8 +6251,12 @@ input[type="datetime-local"]:valid:before {
         grid-template-columns: 1fr !important;
     }
 
+    .gads-why-container-fbs {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
     .gads-why-grid {
-        padding: 80px 0 !important;
+        padding: 60px 0 !important;
     }
 }
 
@@ -6339,6 +6343,45 @@ input[type="datetime-local"]:valid:before {
     }
 }
 
+.gads-simple-success {
+    padding: 60px 0;
+}
+
+.gads-benefits-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gads-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px 60px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.gads-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #100602;
+    font-weight: 500;
+}
+
+.gads-benefit-item i {
+    width: 20px;
+    height: 20px;
+    color: var(--v2-primary);
+}
+
+@media (max-width: 576px) {
+    .gads-benefits-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* Testimonial Stars Fill (Hero & Testimonials) */
 .tp-stars i,
 .tp-stars svg,
@@ -6348,6 +6391,6 @@ input[type="datetime-local"]:valid:before {
 .tiny-stars svg {
     fill: #FFB800 !important;
     color: #FFB800 !important;
-    width: 10px !important;
+    width: 11px !important;
     height: 10px !important;
 }

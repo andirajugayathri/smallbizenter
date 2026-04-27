@@ -289,7 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!sliderContainer || !prevBtn || !nextBtn) return;
 
-        const scrollAmount = 300; // Adjust based on card width + gap
+        const getScrollAmount = () => {
+            const firstCard = sliderContainer.querySelector('.gads-industry-card');
+            return firstCard ? firstCard.offsetWidth + 20 : 280;
+        };
 
         const scrollNext = () => {
             const maxScroll = sliderContainer.scrollWidth - sliderContainer.clientWidth;
@@ -300,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             } else {
                 sliderContainer.scrollBy({
-                    left: scrollAmount,
+                    left: getScrollAmount(),
                     behavior: 'smooth'
                 });
             }
@@ -308,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollPrev = () => {
             sliderContainer.scrollBy({
-                left: -scrollAmount,
+                left: -getScrollAmount(),
                 behavior: 'smooth'
             });
         };
