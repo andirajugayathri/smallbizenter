@@ -5872,7 +5872,7 @@ input[type="datetime-local"]:valid:before {
 
 .gads-industries-slider-wrapper {
     position: relative !important;
-    max-width: 1230px !important;
+    max-width: 1111px !important;
     margin: 10px auto 0 !important;
     padding: 0 60px !important;
 }
@@ -5924,6 +5924,21 @@ input[type="datetime-local"]:valid:before {
     scroll-behavior: smooth !important;
     padding: 20px 0 !important;
     scroll-snap-type: x mandatory !important;
+    margin: 0 auto !important;
+    width: 820px !important;
+    max-width: 100% !important;
+}
+
+@media (max-width: 950px) {
+    #industry-slider-container {
+        width: 540px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    #industry-slider-container {
+        width: 260px !important;
+    }
 }
 
 #industry-slider-container::-webkit-scrollbar {
@@ -6357,7 +6372,7 @@ input[type="datetime-local"]:valid:before {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 20px 60px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     text-align: left;
 }
 

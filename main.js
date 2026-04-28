@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const getScrollAmount = () => {
             const firstCard = sliderContainer.querySelector('.gads-industry-card');
-            return firstCard ? firstCard.offsetWidth + 20 : 280;
+            return firstCard ? (firstCard.offsetWidth + 20) * 3 : 280 * 3;
         };
 
         const scrollNext = () => {
